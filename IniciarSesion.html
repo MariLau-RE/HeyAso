@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="public/styles/mainStyle.css" />
+    <link rel="stylesheet" href="public/styles/IniciarSesion.css" />
+    <title>IniciarSesion</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="public/images/logo.png" class="logo" />
+      <label><strong>HeyAso</strong></label> 
+    </header>
+        
+    <div class="container">  
+      <div class="welcome">
+        <h2>¡HeyAso te da la bienvenida!</h2>
+        <br />
+        <p>Inicia sesión para continuar</p>
+        <img
+          src="public/images/fondo.jpg"
+          width="500"
+          height="500"
+        /><br />
+      </div>
+      <div class="login">
+        
+        <form id="loginPage">
+          <h2>Iniciar Sesión</h2>
+          <div class="inputDiv">
+            <div>
+              <h4>Correo electrónico</h4>
+              <input id="email" class="input" type="text" required />
+            </div>
+          </div>
+
+          <div class="inputDiv">
+            <div>
+              <h4>Contraseña</h4>
+              <input id="contrasenna" class="input" type="password" required />
+            </div>
+          </div>
+          
+          <input id="botonIngresar" type="button" class="btn" value="Ingresar">
+          <a href="PaginaPrincipal.html"><input type="button" class="btnBack" value="Volver"/></a>
+          <h4><div id="dataDisplay" style = "display: flex; justify-content: center"></div></h4>
+          <a href="RegistrarEstudiante.html">¿No tienes cuenta para ingresar? Regístrate</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
