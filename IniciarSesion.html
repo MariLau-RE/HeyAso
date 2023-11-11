@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="public/styles/mainStyle.css" />
     <link rel="stylesheet" href="public/styles/IniciarSesion.css" />
+    <script type="module" src="./Backend/inicioSesion.js"></script>
     <title>IniciarSesion</title>
   </head>
 
@@ -42,12 +43,13 @@
             </div>
           </div>
           
-          <input id="botonIngresar" type="button" class="btn" value="Ingresar">
+          <input id="botonIngresar" type="button" class="btn" value="Ingresar" onclick="loginUser()">
           <a href="PaginaPrincipal.html"><input type="button" class="btnBack" value="Volver"/></a>
           <h4><div id="dataDisplay" style = "display: flex; justify-content: center"></div></h4>
           <a href="RegistrarEstudiante.html">¿No tienes cuenta para ingresar? Regístrate</a>
         </form>
     </div>
 </div>
+
 </body>
 </html>
