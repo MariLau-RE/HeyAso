@@ -1,7 +1,7 @@
 import { collection, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 import { db } from "../configDatabase.js"
 
-const usuarios = collection(db, 'usuario');
+const usuarios = collection(db, 'Usuarios');
 
 async function registroEstudiante() {
   var nombre = getInputVal("name");

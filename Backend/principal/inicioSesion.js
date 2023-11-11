@@ -2,7 +2,7 @@
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 import { db } from "../configDatabase.js"
 
-const usuarios = collection(db, 'usuario');
+const usuarios = collection(db, 'Usuarios');
 
 // Obtén todos los documentos de la colección
 const snapshot = await getDocs(usuarios);
@@ -17,8 +17,7 @@ function loginUser() {
   }else{
     snapshot.docs.forEach(doc => {
       if(doc.data().correo == email && doc.data().contraseña == contrasenna){
-        console.log("INICIO SESION");
-        //localStorage.setItem('carnet', carnet);
+        localStorage.setItem('carnet', doc.data().carnet);
         if(doc.data().idTipo == "Estudiante"){
           encontroUsuario = true;
           window.location.href = "../MenuPrincipalEstudiante.html";
