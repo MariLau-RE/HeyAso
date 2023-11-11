@@ -41,17 +41,17 @@ h2 {
 }
 
 p, label {
-  font-size: 18px;
+  font-size: 16px;
   color: black;
 }
 
 .btn {
   margin: 10px auto;
   width: 100%;
-  height: 45px;
+  height: 40px;
   padding: 10px;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   cursor: pointer;
   border-radius: 20px;
@@ -67,9 +67,9 @@ p, label {
 .btnBack{
   margin: 10px auto;
   width: 50%;
-  height: 45px;
+  height: 40px;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   border-radius: 20px;
   background-color: #DD68E5;
