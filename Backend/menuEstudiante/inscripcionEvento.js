@@ -26,11 +26,7 @@ listaEvento.docs.forEach(doc => {
 function validarUsuario(contacto){
     var usuario = false;
     listaUsuario.docs.forEach(doc => {
-        console.log(doc.data().correo);
-        console.log(contacto);
-
         if(doc.data().correo == contacto){
-            console.log("ENTROO")
             usuario = true;
         }
     });
@@ -71,6 +67,7 @@ function inscribirse() {
                             });
                             console.log("Inscripcion creada con ID: ", docRef.id);
                             alert("Su inscripción se realizó con éxito");
+                            window.location.href = "../PantallaQR.html";
                         } catch (e) {
                             console.error("Error al agregar el documento: ", e);
                         }
