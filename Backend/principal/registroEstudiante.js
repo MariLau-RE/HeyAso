@@ -4,18 +4,18 @@ import { db } from "../configDatabase.js"
 const usuarios = collection(db, 'usuario');
 
 async function registroEstudiante() {
-  var nombre = getInputVal("nombre");
+  var nombre = getInputVal("name");
   var carrera = getInputVal("carrera");
   var carnet = getInputVal("carnet");
   var correo = getInputVal("email");
   var contrasenna = getInputVal("contrasenna");
-  var contacto = getInputVal("contacto");
+  var contacto = getInputVal("telefono");
   var descripcion = getInputVal("descripcion");
 
   if(nombre == '' || carrera == '' || carnet == '' || correo == '' || contrasenna == '' || contacto == ''){
     alert("Debe completar todos los campos(no opcionales)");
   }else{
-    if(!correo.includes("@estudiante.cr")){
+    if(!correo.includes("@estudiantec.cr")){
       alert("El correo debe ser de dominio TEC");
     }else{
       try {
@@ -31,7 +31,6 @@ async function registroEstudiante() {
           idAsociacion: "",
           puesto: ""
         });
-        console.log("Usuario registrado con ID: ", carnet);
         alert("Cuenta creada con éxito");
       } catch (e) {
         console.error("Error al agregar el documento: ", e);
