@@ -16,7 +16,7 @@ async function registroAsociacion() {
   }else{
     try {
       await setDoc(doc(asociaciones, identificador), {
-        idAsociacion: identificador,
+        idAsociacion: "Aso"+identificador,
         nombre: nombre,
         codCarrera: codCarrera,
         contacto: contacto,
