@@ -1,5 +1,5 @@
 import { collection, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
-import { db } from "./configDatabase.js"
+import { db } from "../configDatabase.js"
 
 const usuarios = collection(db, 'usuario');
 
@@ -15,23 +15,27 @@ async function registroEstudiante() {
   if(nombre == '' || carrera == '' || carnet == '' || correo == '' || contrasenna == '' || contacto == ''){
     alert("Debe completar todos los campos(no opcionales)");
   }else{
-    try {
-      await setDoc(doc(usuarios, carnet), {
-        nombre: nombre,
-        carrera: carrera,
-        carnet: carnet,
-        correo: correo,
-        contraseña: contrasenna,
-        contacto: contacto,
-        descripcion: descripcion,
-        idTipo: "Estudiante",
-        idAsociacion: "",
-        puesto: ""
-      });
-      console.log("Usuario registrado con ID: ", carnet);
-      alert("Cuenta creada con éxito");
-    } catch (e) {
-      console.error("Error al agregar el documento: ", e);
+    if(!correo.includes("@estudiante.cr")){
+      alert("El correo debe ser de dominio TEC");
+    }else{
+      try {
+        await setDoc(doc(usuarios, carnet), {
+          nombre: nombre,
+          carrera: carrera,
+          carnet: carnet,
+          correo: correo,
+          contraseña: contrasenna,
+          contacto: contacto,
+          descripcion: descripcion,
+          idTipo: "Estudiante",
+          idAsociacion: "",
+          puesto: ""
+        });
+        console.log("Usuario registrado con ID: ", carnet);
+        alert("Cuenta creada con éxito");
+      } catch (e) {
+        console.error("Error al agregar el documento: ", e);
+      }
     }
   }
 

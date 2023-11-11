@@ -1,5 +1,5 @@
 import { collection, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
-import { db } from "./configDatabase.js"
+import { db } from "../configDatabase.js"
 
 const asociaciones = collection(db, 'Asociacion');
 
