@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="public/styles/mainStyle.css" />
+    <link rel="stylesheet" href="public/styles/IniciarSesion.css" />
+    <title>RegistrarEstudiante</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="public/images/logo.png" class="logo" />
+      <label><strong>HeyAso</strong></label>
+     </header>
+
+    <div class="container">
+      <div class="welcome">
+        <h2>¡HeyAso te da la bienvenida!</h2>
+        <br />
+        <p>Crear cuenta para continuar</p>
+        <img
+          src="public/images/fondo.jpg"
+          width="500"
+          height="500"
+        /><br />
+        <a href="IniciarSesion.html">¿Ya tienes cuenta para ingresar? <br />Inicia sesión</a>
+            <a href="PaginaPrincipal.html"><input type="submit" class="btnBack" value="Regresar"/></a>
+      </div>
+   
+    <div class="login">
+
+      <form id="registerPage">
+        <h2>Registrar Estudiante</h2>
+        <h4><div id="dataDisplay" style = "display: flex; justify-content: center"></div></h4>
+        <div class="inputDiv">
+          <div>
+            <h4>Nombre</h4>
+            <input id="name" class="input" type="text" required/>
+          </div>
+        </div>
+        <div class="inputDiv">
+          <div>
+            <h4>Carrera</h4>
+            <input id="carrera" class="input" type="text" required/>
+          </div>
+        </div>
+        <div class="inputDiv">
+          <div>
+            <h4>Carnet</h4>
+            <input id="carnet" class="input" type="text" required/>
+          </div>
+        </div>
+        <div class="inputDiv">
+          <div>
+            <h4>Correo electrónico</h4>
+            <input id="email" class="input" type="text" required/>
+          </div>
+        </div>
+        <div class="inputDiv">
+          <div>
+            <h4>Contraseña</h4>
+            <input id="contrasenna" class="input" type="password" required/>
+          </div>
+        </div>
+        <div class="inputDiv">
+          <div>
+            <h4>Contacto</h4>
+            <input id="telefono" class="input" type="text" required/>
+          </div>
+        </div>
+        <div class="inputDiv">
+            <div>
+              <h4>Descripción (Opcional)</h4>
+              <input id="descripcion" class="input" type="text"/>
+            </div>
+          </div>
+        <input id="botonRegistrar" type="button" class="btn" value="Crear Cuenta" />
+      </form>
+    </div>
+  </div>
+  </body>
+</html>

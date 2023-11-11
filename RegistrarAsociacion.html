@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="public/styles/mainStyle.css" />
+    <link rel="stylesheet" href="public/styles/IniciarSesion.css" />
+    <title>RegistrarAsociacion</title>
+  </head>
+
+  <body>
+    <header>
+      <img src="public/images/logo.png" class="logo" />
+      <label><strong>HeyAso</strong></label>
+     </header>
+
+    <div class="container">
+      <div class="welcome">
+        <h2>¡HeyAso te da la bienvenida!</h2>
+        <br />
+        <p>Inserte la información de la Asociación para continuar </p>
+        <img
+          src="public/images/fondo.jpg"
+          width="500"
+          height="500"
+        /><br />
+            <a href="PaginaPrincipal.html"><input type="submit" class="btnBack" value="Regresar"/></a>
+      </div>
+   
+    <div class="login">
+
+      <form id="registerPage">
+        <h2>Registrar Asociación</h2>
+        <h4><div id="dataDisplay" style = "display: flex; justify-content: center"></div></h4>
+        <div class="inputDiv">
+          <div>
+            <h4>Nombre</h4>
+            <input id="name" class="input" type="text" required/>
+          </div>
+        </div>
+        <div class="inputDiv">
+          <div>
+            <h4>Descripción</h4>
+            <input id="descripcion" class="input" type="text" required/>
+          </div>
+        </div>
+        <div class="inputDiv">
+          <div>
+            <h4>Código de Carrera</h4>
+            <input id="idcarrera" class="input" type="text" required/>
+          </div>
+        </div>
+        <div class="inputDiv">
+            <div>
+              <h4>Identificador</h4>
+              <input id="idAso" class="input" type="text" required/>
+            </div>
+          </div>
+        <div class="inputDiv">
+          <div>
+            <h4>Contacto</h4>
+            <input id="telefono" class="input" type="text" required/>
+          </div>
+        </div>
+        <input id="botonRegistrarAso" type="button" class="btn" value="Continuar" />
+      </form>
+    </div>
+  </div>
+  </body>
+</html>

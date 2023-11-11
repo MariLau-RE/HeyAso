@@ -21,10 +21,10 @@ function loginUser() {
         //localStorage.setItem('carnet', carnet);
         if(doc.data().idTipo == "Estudiante"){
           encontroUsuario = true;
-          window.location.href = "../MenuEstudiante.html";
+          window.location.href = "../MenuPrincipalEstudiante.html";
         }else{
           encontroUsuario = true;
-          window.location.href = "../MenuColaborador.html";
+          window.location.href = "../MenuPrincipalColaborador.html";
         }
       }
     });
