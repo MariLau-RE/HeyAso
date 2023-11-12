@@ -22,7 +22,6 @@ listaEvento.docs.forEach(doc => {
     select.appendChild(option);
 });
 
-
 function validarUsuario(contacto){
     var usuario = false;
     listaUsuario.docs.forEach(doc => {
@@ -65,7 +64,7 @@ function inscribirse() {
                               nombreUsuario: nombre,
                               contactoUsuario: contacto
                             });
-                            console.log("Inscripcion creada con ID: ", docRef.id);
+                            localStorage.setItem('qrInscripcion', valorSeleccionado+contacto+docRef.id);
                             alert("Su inscripción se realizó con éxito");
                             window.location.href = "../PantallaQR.html";
                         } catch (e) {

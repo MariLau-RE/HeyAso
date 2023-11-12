@@ -4,6 +4,7 @@ import { db } from "../configDatabase.js"
 const usuarios = collection(db, 'Evento');
 
 async function crearEvento() {
+  var idEvento = getInputVal("idEvento")
   var titulo = getInputVal("titulo");
   var descripcion = getInputVal("descripcion");
   var lugar = getInputVal("lugar");
@@ -20,6 +21,7 @@ async function crearEvento() {
   }else{
     try {
       const docRef = await addDoc(usuarios, {
+        idEvento: idEvento,
         titulo: titulo,
         descripcion: descripcion,
         lugar: lugar,
