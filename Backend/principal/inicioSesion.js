@@ -17,6 +17,7 @@ function loginUser() {
     snapshot.docs.forEach(doc => {
       if(doc.data().correo == email && doc.data().contraseña == contrasenna){
         localStorage.setItem('carnet', doc.data().carnet);
+        console.log(localStorage.getItem('canert'));
         if(doc.data().idTipo == "Estudiante"){
           encontroUsuario = true;
           window.location.href = "../MenuPrincipalEstudiante.html";

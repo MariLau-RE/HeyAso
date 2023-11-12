@@ -6,20 +6,44 @@ const eventos = collection(db, 'Evento');
 const inscripciones = collection(db, 'Inscripcion');
 const listaEvento = await getDocs(eventos);
 const listaUsuario = await getDocs(usuarios);
+const listaInscripcion = await getDocs(inscripciones);
+var carnet = localStorage.getItem('carnet');
+var correoInscrip;
+var eventoInscrip;
+console.log(carnet);
 
 var select = document.getElementById("selectEvento");
 var label = document.getElementById("cupos");
 
-listaEvento.docs.forEach(doc => {
-    // Creas un nuevo elemento option
-    var option = document.createElement("option");
 
-    // Le asignas un valor y un texto
-    option.value = doc.data().idEvento;
-    option.text = doc.data().titulo;
+listaUsuario.forEach(docUs =>{
+    if(docUs.data().carnet == carnet){
+        console.log("ENTROOO")
+        correoInscrip = docUs.data().correo;
+        console.log("CORREO", correoInscrip);
+    }
+});
 
-    // Agregas la opción al select
-    select.appendChild(option);
+
+listaInscripcion.forEach(docIns =>{
+    listaEvento.docs.forEach(doc => {
+        if(docIns.data().contactoUsuario == correoInscrip){
+            eventoInscrip = docIns.data().idEvento;
+        }
+
+        if(eventoInscrip != doc.data().idEvento){
+            // Creas un nuevo elemento option
+            var option = document.createElement("option");
+    
+            // Le asignas un valor y un texto
+            option.value = doc.data().idEvento;
+            option.text = doc.data().titulo;
+                    
+            // Agregas la opción al select
+            select.appendChild(option);
+        }
+        
+    });
 });
 
 function validarUsuario(contacto){
