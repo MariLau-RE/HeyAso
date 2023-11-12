@@ -21,7 +21,7 @@
 
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-2"></div>
+            <div class="col-4"></div>
             <div class="col-4">
                 <form id="inscripcionEvento">
                     <div class="row">
@@ -34,40 +34,27 @@
                         </select>
                     </div>
 
-                    <div class="inputDiv">
-                        <div>
-                            <input id="titulo" class="input" type="text" placeholder="Título" required />
-                        </div>
+                    <div class="inputDiv" style="margin-top: 40px;">
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectCalificacion">
+                            <option value='0' selected>Seleccionar Calificación</option>
+                            <option value='1' selected>1</option>
+                            <option value='2' selected>2</option>
+                            <option value='3' selected>3</option>
+                            <option value='4' selected>4</option>
+                            <option value='5' selected>5</option>
+                        </select>
                     </div>
 
                     <div class="inputDiv">
                         <div>
-                            <input id="descripcion" class="input" type="text" placeholder="Descripción" required />
+                            <textarea id="comentario" class="input" type="text" placeholder="Comentario" required></textarea>
                         </div>
-                    </div>
+                    </div><br/><br/>
 
-                    <div class="inputDiv">
-                        <div>
-                            <input id="comentario" class="input" type="text" placeholder="Comentario" required />
-                        </div>
-                    </div>
-
-                    <div class="inputDiv">
-                        <div>
-                            <input id="calificacion" class="input" type="number" placeholder="Calificación" required />
-                        </div>
-                    </div>
+                    <input id="btn_enviar" type="button" class="btn" value="Enviar" onclick="">
+                    <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
                 </form>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4"></div>
-            <div class="col-4">
-                <input id="btn_compartir" type="button" class="btn" value="Enviar Formulario" onclick="evaluarEvento()">
-                <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
-            </div>
-
         </div>
 
     </div>
