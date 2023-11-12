@@ -17,7 +17,6 @@ async function propuesta() {
     if(valorSeleccionado == '0'){
       alert("Debe seleccionar una categoría");
     }else{
-      console.log("TIENE TODOS LOS CAMPOS");
       try {
         const docRef = await addDoc(propuestas, {
           titulo: titulo,
