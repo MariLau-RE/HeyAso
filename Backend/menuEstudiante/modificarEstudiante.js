@@ -1,16 +1,16 @@
 import { collection, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 import { db } from "../configDatabase.js"
 
-const usuarios = collection(db, 'usuario');
-
+const usuarios = collection(db, 'Usuarios');
+/*FALTA CONECTAR AL FRONT */
 async function modificarEstudiante() {
   var nombre = getInputVal("nombre");
   var carrera = getInputVal("carrera");
-  var carnet = getInputVal("carnet");
   var correo = getInputVal("email");
   var contrasenna = getInputVal("contrasenna");
   var contacto = getInputVal("contacto");
   var descripcion = getInputVal("descripcion");
+  var carnet = localStorage.getItem('carnet');
 
   if(nombre == '' || carrera == '' || carnet == '' || correo == '' || contrasenna == '' || contacto == ''){
     alert("Debe completar todos los campos(no opcionales)");

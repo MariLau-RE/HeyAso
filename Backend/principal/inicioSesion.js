@@ -1,4 +1,3 @@
-// Importa las funciones que necesitas de los SDKs que necesitas
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 import { db } from "../configDatabase.js"
 

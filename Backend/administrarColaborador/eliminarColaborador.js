@@ -1,32 +1,46 @@
 import { collection, setDoc, getDocs, doc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 import { db } from "../configDatabase.js"
 
-const usuarios = collection(db, 'usuario');
-const snapshot = await getDocs(usuarios);
+const usuarios = collection(db, 'Usuarios');
+const listaUsuario = await getDocs(usuarios);
 
+var select = document.getElementById("selectEvento");
 
+listaUsuario.docs.forEach(doc => {
+    // Creas un nuevo elemento option
+    var option = document.createElement("option");
+
+    // Le asignas un valor y un texto
+    option.value = doc.data().carnet;
+    option.text = doc.data().nombre;
+
+    // Agregas la opción al select
+    select.appendChild(option);
+});
+
+/*FALTA CONECTAR AL FRONT */
 
 async function eliminarColaborador() {
-  var carnet = getInputVal("carnet");
+  var carnet = select.value;
   var nombre, carrera, correo, contrasenna, contacto, descripcion, idAsociacion, puesto;
 
-  snapshot.docs.forEach(doc => {
-    if(doc.data().carnet == carnet){
-        nombre = doc.data().nombre;
-        carrera = doc.data().carrera;
-        correo = doc.data().correo;
-        contrasenna = doc.data().contraseña;
-        contacto = doc.data().contacto;
-        descripcion = doc.data().descripcion;
-        idAsociacion = doc.data().idAsociacion;
-        puesto = doc.data().puesto;
-    }
-  });
-
-
-  if(carnet == ''){
-    alert("Debe completar el campo solicitado");
+  if(carnet == '0'){
+    alert("Debe seleccionar un estudiante.");
   }else{
+    
+    listaUsuario.docs.forEach(doc => {
+      if(doc.data().carnet == carnet){
+          nombre = doc.data().nombre;
+          carrera = doc.data().carrera;
+          correo = doc.data().correo;
+          contrasenna = doc.data().contraseña;
+          contacto = doc.data().contacto;
+          descripcion = doc.data().descripcion;
+          idAsociacion = doc.data().idAsociacion;
+          puesto = doc.data().puesto;
+      }
+    });
+
     try {
       await setDoc(doc(usuarios, carnet), {
         nombre: nombre,
@@ -45,11 +59,6 @@ async function eliminarColaborador() {
     } catch (e) {
       console.error("Error al agregar el documento: ", e);
     }
-  }
-
-  // Function to get form values
-  function getInputVal(id) {
-    return document.getElementById(id).value;
   }
 }
 

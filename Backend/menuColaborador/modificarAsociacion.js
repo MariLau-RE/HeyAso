@@ -3,6 +3,24 @@ import { db } from "../configDatabase.js"
 
 const asociaciones = collection(db, 'Asociacion');
 
+
+var select = document.getElementById("selectEvento");
+
+listaAsociacion.docs.forEach(doc => {
+    // Creas un nuevo elemento option
+    var option = document.createElement("option");
+
+    // Le asignas un valor y un texto
+    option.value = doc.data().idEvento;
+    option.text = doc.data().titulo;
+
+    // Agregas la opción al select
+    select.appendChild(option);
+});
+
+/*FALTA LLENAR LOS CAMPOS CON LA BUSQUEDA
+FALTA CONECTAR CON EL FRONT */
+
 async function modificarAsociacion() {
   var nombre = getInputVal("nombre");
   var descripcion = getInputVal("descripcion");

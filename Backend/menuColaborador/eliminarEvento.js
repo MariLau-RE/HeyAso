@@ -17,7 +17,7 @@ listaEvento.docs.forEach(doc => {
     select.appendChild(option);
 });
 
-
+/*FALTA CONECTAR AL FRONT */
 function eliminarEvento() {
     var valorSeleccionado = select.value;
 
