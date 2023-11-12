@@ -10,21 +10,22 @@ const listaEvento = await getDocs(eventos);
 const listaInscripcion = await getDocs(inscripciones);
 
 var select = document.getElementById("selectEvento");
+var selectCalif = document.getElementById("selectCalificacion");
 
 listaEvento.docs.forEach(doc => {
     listaInscripcion.forEach(docIns =>{
         if(doc.data().idEvento == docIns.data().idEvento){
             listaUsuario.forEach(docUs =>{
                 if(docIns.data().contactoUsuario == docUs.data().correo){
-                        // Creas un nuevo elemento option
-                        var option = document.createElement("option");
+                      // Creas un nuevo elemento option
+                      var option = document.createElement("option");
 
-                        // Le asignas un valor y un texto
-                        option.value = doc.data().idEvento;
-                        option.text = doc.data().titulo;
+                      // Le asignas un valor y un texto
+                      option.value = doc.data().idEvento;
+                      option.text = doc.data().titulo;
 
-                        // Agregas la opción al select
-                        select.appendChild(option);
+                      // Agregas la opción al select
+                      select.appendChild(option);
                 }
             });
         }
@@ -32,24 +33,20 @@ listaEvento.docs.forEach(doc => {
 });
 
 async function evaluarEvento() {
-    var titulo = getInputVal("titulo");
-    var descripcion = getInputVal("descripcion");
     var comentario = getInputVal("comentario");
-    var calificacion = getInputVal("calificacion");
-    var valorSeleccionado = select.value;
-    var carnet = localStorage.getItem("carnet");
+    var calificacion = selectCalif.value;
+    var evento = select.value;
+    var carnet = localStorage.getItem('carnet');
    
-    if(titulo == '' || comentario == '' || calificacion == '' || descripcion == ''){
+    if(comentario == '' || calificacion == '0'){
       alert("Debe completar todos los campos");
     }else{
-      if(valorSeleccionado == '0'){
+      if(evento == '0'){
         alert("Debe seleccionar un evento");
       }else{
         try {
           const docRef = await addDoc(evaluaciones, {
-            idEvento: valorSeleccionado,
-            titulo: titulo,
-            descripcion: descripcion,
+            idEvento: evento,
             comentario: comentario,
             calificacion: calificacion,
             carnet: carnet
