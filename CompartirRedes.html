@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Compartir Redes</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
+    <link rel="stylesheet" href="public/styles/styles.css">
+
+</head>
+
+<body Style="background:white">
+    <header>
+        <img src="public/images/logo.png" class="logo">
+        <p><strong><br />HeyAso</strong></p>
+    </header>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <form id="inscripcionEvento">
+                    <div class="row">
+                        <h2 style="color:black">Compartir en redes</h2><br /><br /><br />
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="descripción" class="input" type="text" placeholder="Descripción" required/>
+                        </div>
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="tags" class="input" type="text" placeholder="Tags" required />
+                        </div>
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="lugar" class="input" type="text" placeholder="Lugar" required />
+                        </div>
+                    </div><br/>
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label" style="margin-right: 20px;">Compartir en</label>
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="optionFace">
+                        <label class="form-check-label" for="inlineCheckbox1">Facebook</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="optionInsta">
+                        <label class="form-check-label" for="inlineCheckbox2">Instagram</label>
+                    </div>
+                    <br/><br/>
+
+                    <div class="row justify-content-center">
+                        <input id="btn_compartir" type="button" class="btn" value="Compartir" onclick="">
+                        <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-4 justify-content-center">
+                <div class="card">
+                    <div class="card-body" style="background-color: #DCF2FC;">
+                        <h4 style="font-weight: bolder;" class="card-title">Imagen del evento</h4>
+                        <img src="./public/images/fondo.jpg" style="max-width: 310px;"/> <!-- cambiar imagen -->
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
