@@ -39,5 +39,4 @@ async function propuestaEvento() {
   }
 }
 
-// Asigna propuestaEvento al objeto window
-window.propuestaEvento = propuestaEvento;
+window.propuestaEvento = propuestaEvento();
