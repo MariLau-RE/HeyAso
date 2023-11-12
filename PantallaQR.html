@@ -32,8 +32,23 @@
             <div class="col-4 justify-content-center">
                 <h2 style="color:black;">QR</h2>
                 <img src="public/images/qr.png" style="margin-top: 60px; height: 200px; width: 200px;" />
-                <p style="margin-top: 60px;">Con este QR podrá ingresar al evento. Consulte su correo para mas información</p>
-                <input id="btn_consulta" type="button" onclick="history.back()" class="btnBack" value="Volver" />
+                <div class="row" style="margin-top: 10px;">
+                    <p>Nombre del evento: <span id="evento"></span></p>
+                </div>
+                <div class="row" style="margin-top: -15px;">
+                    <p>Fecha: <span id="fecha"></span></p>
+                </div>
+                <div class="row" style="margin-top: -15px;">
+                    <p>Lugar: <span id="lugar"></span></p>
+                </div>
+                
+                <div class="row" style="margin-top: -15px;">
+                    <p>Nombre del estudiante: <span id="estudiante"></span></p>
+                </div>
+                <div class="row">
+                    <input id="btn_consulta" type="button" onclick="history.back()" class="btnBack" value="Volver" />
+                </div>
+                
             </div>
             <div class="col-1"></div>
         </div>
