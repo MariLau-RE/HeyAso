@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Propuesta Evento</title>
+    <title>Evaluar Evento</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,13 @@
             <div class="col-4">
                 <form id="inscripcionEvento">
                     <div class="row">
-                        <h2 style="color:black">Propuesta de evento</h2><br /><br /><br />
+                        <h2 style="color:black">Evaluación de evento</h2><br /><br /><br />
+                    </div>
+
+                    <div class="inputDiv" style="margin-top: 40px;">
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectEvento">
+                            <option value='0' selected>Seleccionar evento</option>
+                        </select>
                     </div>
 
                     <div class="inputDiv">
@@ -42,23 +48,15 @@
 
                     <div class="inputDiv">
                         <div>
-                            <input id="objetivos" class="input" type="text" placeholder="Objetivos" required />
+                            <input id="comentario" class="input" type="text" placeholder="Comentario" required />
                         </div>
                     </div>
 
                     <div class="inputDiv">
                         <div>
-                            <input id="actividades" class="input" type="text" placeholder="Actividades" required />
+                            <input id="calificacion" class="input" type="number" placeholder="Calificación" required />
                         </div>
                     </div>
-
-                    <div class="inputDiv" style="margin-top: 40px;">
-                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectCategoría">
-                            <option value='0' selected>Seleccionar categoría</option>
-                        </select>
-                    </div>
-
-
                 </form>
             </div>
         </div>
