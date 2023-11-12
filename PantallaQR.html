@@ -30,7 +30,8 @@
 
             <div class="col-4 justify-content-center">
                 <h2 style="color:black;">QR</h2>
-                <img src="public/images/qr.png" style="margin-top: 60px; height: 200px; width: 200px;" />
+
+                <div id="qr" style="margin-top: 60px; height: 200px; width: 200px;" ></div>
                 <div class="row" style="margin-top: 10px;">
                     <p>Nombre del evento: <span id="evento"></span></p>
                 </div>
@@ -57,6 +58,8 @@
     </div>
 
     <!-- Optional JavaScript -->
+    <script src="./Backend/qrcode.min.js"></script>
+    <script type="module" src="./Backend/menuEstudiante/notificacionesQR.js"></script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

@@ -9,8 +9,9 @@ const listaUsuario = await getDocs(usuarios);
 const listaInscripcion = await getDocs(inscripciones);
 var carnet = localStorage.getItem('carnet');
 var correoInscrip;
-var eventoInscrip;
+var eventoInscrip ='';
 console.log(carnet);
+console.log("Inscrip", listaInscripcion.size);
 
 var select = document.getElementById("selectEvento");
 var label = document.getElementById("cupos");
@@ -18,33 +19,42 @@ var label = document.getElementById("cupos");
 
 listaUsuario.forEach(docUs =>{
     if(docUs.data().carnet == carnet){
-        console.log("ENTROOO")
         correoInscrip = docUs.data().correo;
-        console.log("CORREO", correoInscrip);
     }
 });
 
-
-listaInscripcion.forEach(docIns =>{
-    listaEvento.docs.forEach(doc => {
-        if(docIns.data().contactoUsuario == correoInscrip){
-            eventoInscrip = docIns.data().idEvento;
-        }
-
-        if(eventoInscrip != doc.data().idEvento){
-            // Creas un nuevo elemento option
-            var option = document.createElement("option");
+listaEvento.docs.forEach(doc => {
+    if(listaInscripcion.size == 0){
+        // Creas un nuevo elemento option
+        var option = document.createElement("option");
     
-            // Le asignas un valor y un texto
-            option.value = doc.data().idEvento;
-            option.text = doc.data().titulo;
-                    
-            // Agregas la opción al select
-            select.appendChild(option);
-        }
+        // Le asignas un valor y un texto
+        option.value = doc.data().idEvento;
+        option.text = doc.data().titulo;
+                            
+        // Agregas la opción al select
+        select.appendChild(option);
+    }else{
+        listaInscripcion.forEach(docIns =>{
+            if(docIns.data().contactoUsuario == correoInscrip){
+                eventoInscrip = docIns.data().idEvento;
+            }
+
+            if(eventoInscrip != doc.data().idEvento){
+                // Creas un nuevo elemento option
+                var option = document.createElement("option");
         
-    });
+                // Le asignas un valor y un texto
+                option.value = doc.data().idEvento;
+                option.text = doc.data().titulo;
+                        
+                // Agregas la opción al select
+                select.appendChild(option);
+            }
+        });
+    }  
 });
+
 
 function validarUsuario(contacto){
     var usuario = false;
@@ -88,6 +98,7 @@ function inscribirse() {
                               nombreUsuario: nombre,
                               contactoUsuario: contacto
                             });
+                            localStorage.setItem('qrEvento', valorSeleccionado);
                             localStorage.setItem('qrInscripcion', valorSeleccionado+contacto+docRef.id);
                             alert("Su inscripción se realizó con éxito");
                             window.location.href = "../PantallaQR.html";
