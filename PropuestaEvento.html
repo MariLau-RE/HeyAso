@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Propuesta Evento</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
+    <link rel="stylesheet" href="public/styles/styles.css">
+
+</head>
+
+<body Style="background:white">
+    <header>
+        <img src="public/images/logo.png" class="logo">
+        <p><strong><br />HeyAso</strong></p>
+    </header>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <form id="inscripcionEvento">
+                    <div class="row">
+                        <h2 style="color:black">Propuesta de evento</h2><br /><br /><br />
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="titulo" class="input" type="text" placeholder="Título" required/>
+                        </div>
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="descripción" class="input" type="text" placeholder="Descripción" required/>
+                        </div>
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="objetivos" class="input" type="text" placeholder="Objetivos" required/>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="actividades" class="input" type="text" placeholder="Actividades" required />
+                        </div>
+                    </div>
+
+                    <div class="inputDiv" style="margin-top: 40px;">
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectCategoría">
+                            <option value='0' selected >Seleccionar categoría</option>
+                        </select>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-4 justify-content-center">
+                <div class="row justify-content-center">
+                    <input id="btn_compartir" type="button" class="btn" value="Enviar Formulario" onclick="">
+                    <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
