@@ -117,60 +117,16 @@ p, label {
   height: 85px;
 }
 
-.inputDiv {
-  position: relative;
-  display: grid;
-  grid-template-columns: 7% 93%;
-  margin: 16px 0;
-  padding: 12px 0;
-  border-bottom: 3px solid #d9d9d9;
-}
-
-.inputDiv div {
-  height: 40px;
-  margin-top: 20px;
-}
-
-.inputDiv h4 {
-  position: absolute;
-  transform: translateY(-50%);
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.input {
-  position: absolute;
-  letter-spacing: 0.1px;
-  width: 100%;
-  height: 40px;
-  margin-top: 15px;
-  border: none;
-  left: 0;
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 16px;
-  color: #555555;
-  font-family: Lucida Sans;
-  transition: 0.3s;
-}
-
 select {
   position: absolute;
   letter-spacing: 0.1px;
   width: 100%;
   height: 40px;
-  margin-top: 25px;
+  margin-top: -12px;
   border: none;
   background: none;
   font-size: 18px;
   font-weight: bolder;
-}
-
-.input:focus {
-  border-bottom: 3px solid #2FBCF8;
 }
 
 select:focus {
@@ -190,4 +146,54 @@ footer {
   background-image: url('../images/fondo.jpg');
   background-size: cover;
   height: 300px;
+}
+
+
+.inputDiv {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7% 93%;
+  padding: 12px 0;
+  border-bottom: 3px solid #d9d9d9;
+}
+
+.inputDiv div {
+  height: 40px;
+}
+
+.inputDiv h4 {
+  position: absolute;
+  transform: translateY(-50%);
+  color: black;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.input {
+  position: absolute;
+  letter-spacing: 0.1px;
+  width: 300px;
+  height: 40px;
+  margin-top: 15px;
+  border: none;
+  left: 0;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 16px;
+  color: #555555;
+  font-family: Lucida Sans;
+  transition: 0.3s;
+}
+
+.input:focus {
+  border-bottom: 3px solid #2FBCF8;
+  width: 100%;
+}
+
+::placeholder {
+  color: black; 
+  font-family: Arial; 
+  font-weight: bold;
+  font-size: 18px;
 }

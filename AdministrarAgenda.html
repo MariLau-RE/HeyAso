@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Inscripción Eventos</title>
+    <title>Administrar Agenda</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -21,51 +21,51 @@
 
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-2"></div>
-            <div class="col-4">
+            <div class="col"></div>
+
+            <div class="col justify-content-center">
                 <form id="inscripcionEvento">
-                    <div class="row">
-                        <h2 style="color:black">Inscripción al evento</h2><br /><br /><br />
+                    <div class="row justify-content-center" style="margin-bottom: 40px;">
+                        <h2 style="color:black; margin-top: -40px;">Administrar agenda</h2>
                     </div>
 
                     <div class="inputDiv">
-                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectEvento">
-                            <option value='0' selected >Seleccionar evento</option>
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectEncargado">
+                            <option value='0' selected >Encargado</option>
+                        </select>
+                    </div>
+                    
+                    <div class="inputDiv" style="margin-top:40px;">
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectCapacidad">
+                            <option value='0' selected >Capacidad</option>
                         </select>
                     </div>
 
                     <div class="inputDiv">
                         <div>
-                            <input id="nombre" class="input" type="text" placeholder="Nombre" required/>
+                            <input id="actividad" class="input" type="text" placeholder="Título actividad" required/>
                         </div>
                     </div>
 
                     <div class="inputDiv">
                         <div>
-                            <input id="contacto" class="input" type="text" placeholder="Contacto" required />
+                            <input id="descripcion" class="input" type="text" placeholder="Descripción" required />
                         </div>
-                    </div><br/><br/>
-
-                    <div class="row justify-content-center">
-                        <input id="btn_inscribirse" type="button" class="btn" value="Inscribirse" onclick="inscribirse()">
-                        <input id="btn_consulta" type="button" class="btn" value="Consultar disponibilidad" onclick="disponibilidad()">
-                        <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
                     </div>
 
+                    <div class="inputDiv">
+                        <div>
+                            <input id="duracion" class="input" type="text" placeholder="Duración" required />
+                        </div>
+                    </div><br/>  
+                    <div class="row justify-content-center">
+                        <input id="btn_actividad" type="button" class="btn" value="Añadir actividad" onclick="">
+                        <input id="btn_otraActividad" type="button" class="btn" value="Otra actividad" onclick="">
+                        <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
+                    </div>                  
                 </form>
             </div>
-            <div class="col-1"></div>
-
-            <div class="col-4 justify-content-center">
-                <div class="card">
-                    <div class="card-body" style="background-color: #DCF2FC;">
-                        <h4 style="font-weight: bolder;" class="card-title">Cupos disponibles</h4>
-                        <p class="card-text">Apresurate a resevar tu espacio, cupos que quedan disponibles:</p>
-                        <label id="cupos" class="card-text">#cupos</label>
-                        <h5 style="background-color: #DD68E5; border-radius: 40px;  padding: 10px; color: white; height: 45px; align-items: center;">Cupos limitados</h5>
-                    </div>
-                </div>
-                <div class="col-1"></div>
+            <div class="col"></div>
             </div>
         </div>
 
