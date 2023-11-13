@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.calendar {
+    display: inline-block;
+    padding: 50px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.week-days, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.week-days div {
+    text-align: center;
+    font-weight: bold;
+    color: #888;
+}
+
+.days div {
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.days div:hover {
+    background-color: #f0f0f0;
+}
+
+.active {
+    background-color: #DD68E5;
+    color: white;
+}
+
+.group {
+    width: 380px;
+    height: 130px;
+    margin: 30px auto;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px 20px 20px 20px;
+  }
+
+  .month-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.month-header button {
+    background-color: #DD68E5;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 30px ;
+    margin-left: 30px ;
+    cursor: pointer;
+}

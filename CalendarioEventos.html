@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/styles/Calendario.css">
+    <link rel="stylesheet" href="public/styles/mainStyle.css">
+    <title>Calendario</title>
+</head>
+<body>
+    <header>
+        <img src="public/images/logo.png" class="logo">
+        <p><strong>HeyAso</strong></p>
+        <div class="containerRight">
+            <a href="MenuPrincipalEstudiante.html"><input type="submit" class="btnBack" value="Volver"/></a>
+        </div>
+    </header>
+    <div class="group">
+        <div class="calendar">
+            <div class="month-header">
+                <button onclick="prevMonth()">Anterior</button>
+                <h2 id="month-year"></h2>
+                <button onclick="nextMonth()">Siguiente</button>
+            </div>
+            <br /><br />
+            <div class="week-days">
+                <div>Dom</div>
+                <div>Lun</div>
+                <div>Mar</div>
+                <div>Mié</div>
+                <div>Jue</div>
+                <div>Vie</div>
+                <div>Sáb</div>
+            </div>
+            <div class="days">
+                <script src="DiasCalendario.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <script src="DiasCalendario.js"></script>
+</body>
+</html>
