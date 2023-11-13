@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Preguntas Foro</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
+    <link rel="stylesheet" href="public/styles/styles.css">
+
+</head>
+
+<body Style="background:white">
+    <header>
+        <img src="public/images/logo.png" class="logo">
+        <p><strong><br />HeyAso</strong></p>
+    </header>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <form id="preguntasForo">
+                    <div class="row">
+                        <h2 style="color:black">Preguntas Foro</h2><br /><br /><br/>
+                    </div>
+                    
+                    <div>
+                        <p>Deja tu pregunta o comentario</p>
+                        <textarea id="comment-input"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea><br>
+                        <button id="submit-button" type="button" class="btn">Enviar</button>
+                        <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-4 justify-content-center">
+                <div id="comment-section">
+                    <h5 style="font-weight: bold;">Comentarios comunidad</h5>
+                    <div id="comments-container"></div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script>
+        const submitButton = document.getElementById("submit-button");
+        const commentInput = document.getElementById("comment-input");
+        const commentsContainer = document.getElementById("comments-container");
+
+        submitButton.addEventListener("click", function() {
+        const comment = commentInput.value;
+        const commentElement = document.createElement("div");
+        commentElement.innerHTML = comment;
+        commentsContainer.appendChild(commentElement);
+        commentInput.value = "";
+        });
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
