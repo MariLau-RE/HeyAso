@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Eliminar Actividad</title>
+    <title>Procesar Propuesta</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -21,33 +21,33 @@
 
     <div class="container">
         <div class="row align-items-center">
-            <div class="col"></div>
-            <div class="col">
-                <form id="eliminarActividad">
-                    <div class="row justify-content-center">
-                        <h2 style="color:black">Eliminar Actividad</h2><br /><br /><br/><br/>
+            <div class="col-2"></div>
+            <div class="col-4">
+                <form id="procesarPropuesta">
+                    <div class="row">
+                        <h2 style="color:black">Procesar Propuesta</h2><br /><br /><br/>
                     </div>
 
                     <div class="inputDiv" style="margin-top: 35px;">
-                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectEvento">
-                            <option value='0' selected >Seleccionar evento</option>
-                        </select>
-                    </div>
-                    
-                    <div class="inputDiv" style="margin-top: 35px;">
-                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectEvento">
-                            <option value='0' selected >Seleccionar actividad</option>
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectPropuesta">
+                            <option value='0' selected >Seleccionar propuesta</option>
                         </select>
                     </div>
                     <br/><br/><br/>
 
                     <div class="row justify-content-center">
-                        <input id="btn_eliminar" type="button" class="btn" value="Eliminar" onclick="">
+                        <input id="btn_aceptar" type="button" class="btn" value="Aceptar" onclick="">
+                        <input id="btn_rechazar" type="button" class="btn" value="Rechazar" onclick="">
                         <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
                     </div>
                 </form>
             </div>
-            <div class="col"></div>
+            <div class="col-1"></div>
+
+            <div class="col-4 justify-content-center">
+                <label>Mostrar info acá *******</label>
+            </div>
+            <div class="col-1"></div>
         </div>
     </div>
     </div>
