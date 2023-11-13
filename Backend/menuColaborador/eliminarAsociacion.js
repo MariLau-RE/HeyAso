@@ -3,8 +3,10 @@ import { db } from "../configDatabase.js"
 
 const asociaciones = collection(db, 'Asociacion');
 const usuarios = collection(db, 'Usuarios');
+const eventos = collection(db, 'Evento');
 const listaAsociacion = await getDocs(asociaciones);
 const listaUsuario = await getDocs(usuarios);
+const listaEvento = await getDocs(eventos);
 var select = document.getElementById("asociacion");
 
 listaAsociacion.docs.forEach(docAs => {
@@ -36,7 +38,17 @@ async function eliminarAsociacion() {
                 console.error("Error al actualizar el documento: ", e);
             }
         }
+    });
 
+    listaEvento.docs.forEach(async docEv => {
+        if(docEv.data().idAsociacion == id){
+            try {
+                await deleteDoc(doc(eventos, docEv.id));
+                console.log("Evento eliminado con ID: ", docEv.id);
+            } catch (e) {
+                console.error("Error al eliminar el documento: ", e);
+            }
+        }
     });
 
     try {
