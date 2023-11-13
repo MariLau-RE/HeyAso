@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="public/styles/mainStyle.css" />
     <link rel="stylesheet" href="public/styles/Menu.css" />
     <link rel="stylesheet" href="public/styles/PaginaPrincipal.css">
+    <script type="module" src="./Backend/menuEstudiante/eliminarEstudiante.js"></script>
     <title>GestionEstudiante</title>
   </head>
     <header>
@@ -20,7 +21,7 @@
         <h3 style="color: white; font-size: 20px;">Seleccione la opción a realizar</h3>
         <div class="groupbutton">
             <a href="ModificarEstudiante.html"><input type="submit" class="btn" value="Modificar Cuenta"/></a><br>
-            <a href="EliminarEstudiante.html"><input type="submit" class="btn" value="Eliminar Cuenta"/></a><br>
+            <a><input type="button" class="btn" value="Eliminar Cuenta" onclick="eliminarEstudiante()"/></a><br>
         </div>
     </div>
 </body>

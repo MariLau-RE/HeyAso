@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="public/styles/mainStyle.css" />
     <link rel="stylesheet" href="public/styles/Formularios.css" />
+    <script type="module" src="./Backend/menuEstudiante/modificarEstudiante.js"></script>
     <title>ModificarEstudiante</title>
   </head>
   <header>
@@ -21,11 +22,11 @@
           <div class="formulario">
             <label for="nombre">Nombre Completo:</label>
             <br />
-            <input type="text" id="nombre" name="nombre" required />
+            <input type="text" id="nombre" name="nombre" required/>
             <br />
-            <label for="codigo">Codigo de carrera:</label>
+            <label for="codigo">Carrera:</label>
             <br />
-            <input type="text" id="codigo" name="codigo" required />
+            <input type="text" id="carrera" name="codigo" required/>
             <br />
 
             <label for="correo">Correo:</label>
@@ -34,7 +35,7 @@
             <br />
             <label for="contrasenna">Contraseña:</label>
             <br />
-            <input type="text" id="contrasenna" name="contrasenna" required />
+            <input type="password" id="contrasenna" name="contrasenna" required />
             <br />
             <label for="contacto">Contacto:</label>
             <br />
@@ -48,7 +49,7 @@
         </div>
         <div class="column right-column">
           <h4><div id="dataDisplay" style = "display: flex; justify-content: center"></div></h4>
-          <input id="btnModificar" type="button" class="btn" value="Modificar" style="margin-bottom: 0px"/>
+          <input id="btnModificar" type="button" class="btn" value="Modificar" style="margin-bottom: 0px" onclick="modificarEstudiante()"/>
           <a href="GestionEstudiante.html"><input type="button" class="btn" value="Volver"/><br /></a>
           
         </div>
