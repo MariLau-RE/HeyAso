@@ -19,4 +19,18 @@ listaPropuesta.docs.forEach(doc => {
 });
 
 //FALTA MOSTRAR LA INFORMACION
-//FALTA CAMBIAR EL ESTADO SEGÚN LA RECHACE O APRUEBE
+
+async function procesarPropuesta(){
+    var idPropuesta = select.value;
+
+    try {
+        const docRef = doc(propuestas, idPropuesta); // Obtiene la referencia al documento
+        await updateDoc(docRef,{ estado: capacidad }); // Actualiza solo el campo encuesta
+        console.log("Encuesta actualizada con éxito");   
+    } catch (e) {
+        console.error("Error al actualizar el documento: ", e);
+    }
+
+}
+
+window.procesarPropuesta = procesarPropuesta;
