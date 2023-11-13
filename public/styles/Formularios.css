@@ -1,0 +1,140 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 55px;
+  }
+  
+  .title {
+    padding-top: 20px;
+    padding-bottom: 0;
+    margin-left: 0;
+  }
+  
+  .btn {
+    margin: 20px auto;
+    width: 380px;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px 20px 20px 20px;
+    background-color: #DD68E5;
+    transition: all 0.3s ease 0s;
+  }
+  
+  h1 {
+    font-size: 40px;
+    color: black;
+    font-family: Arial;
+  }
+  
+  /* Set the width of the columns */
+  .column {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  
+  /* Style the left column */
+  .left-column {
+    background-color: white;
+    align-items: center;
+  }
+  
+  /* Style the right column */
+  .right-column {
+    background-color: white;
+    align-items: center;
+    margin-top: 100px;
+  }
+  
+  label{
+    font-size: 16px;
+    font-family: Arial;
+  }
+  
+  input[type="date"] {
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px;
+  }
+  
+  input[type="time"] {
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px;
+  }
+  
+  input[type="text"]{
+    height: 32px;
+    width: 300px;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #d9d9d9;
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-top: 6px;
+    transition: 0.3s;
+  }
+  
+  input[type="password"]{
+    height: 32px;
+    width: 300px;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #d9d9d9;
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-top: 6px;
+    transition: 0.3s;
+  }
+  
+  input[type="date"]{
+    height: 32px;
+    width: 300px;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #d9d9d9;
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-top: 6px;
+    transition: 0.3s;
+  }
+  
+  input[type="text"]:focus{
+    border-bottom: 3px solid  #2FBCF8;
+  }
+  
+  input[type="password"]:focus{
+    border-bottom: 3px solid  #2FBCF8;
+  }
+  
+  input[type="date"]:focus{
+    border-bottom: 3px solid  #2FBCF8;
+  }
+  
+  select{
+    font-size: 16px;
+  }
+  
+  .formulario {
+    position: relative;
+    padding-top: 20px;
+  }
+  
+  .campo {
+    position: relative;
+    padding-top: 20px;
+  }
+  
+  
