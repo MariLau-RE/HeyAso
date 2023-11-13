@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
+    <script type="module" src="./Backend/menuColaborador/buscarEvento.js"></script>
     <link rel="stylesheet" href="public/styles/styles.css">
 
 </head>
@@ -36,15 +36,24 @@
                     <br/><br/><br/>
 
                     <div class="row justify-content-center">
-                        <input id="btn_buscar" type="button" class="btn" value="Buscar" onclick="">
-                        <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
+                        <input id="btn_volver" type="button" onclick="window.location.href='AdministrarEvento.html'" class="btnBack" value="Volver" />
                     </div>
                 </form>
             </div>
             <div class="col-1"></div>
-
-            <div class="col-4 justify-content-center">
-                <label>Mostrar info acá *******</label>
+                <div class="col-4 justify-content-center">
+                    <div style="text-align: left">
+                    <li style="margin-bottom: 10px;">Titulo: <label id="titulo"> - </label></li>
+                    <li style="margin-bottom: 10px;">Descripción: <label id="descripcion"> - </label></li>
+                    <li style="margin-bottom: 10px;">Capacidad: <label id="capacidad"> - </label></li>
+                    <li style="margin-bottom: 10px;">Asociación: <label id="asociacion"> - </label></li>
+                    <li style="margin-bottom: 10px;">Categoría: <label id="categoria"> - </label></li>
+                    <li style="margin-bottom: 10px;">Duración: <label id="duracion"> - </label></li>
+                    <li style="margin-bottom: 10px;">Fecha: <label id="fecha"> - </label></li>
+                    <li style="margin-bottom: 10px;">Lugar: <label id="lugar"> - </label></li>
+                    <li style="margin-bottom: 10px;">Encuesta: <label id="encuesta"> - </label></li>
+                    <li style="margin-bottom: 10px;">Requisitos: <label id="requisitos"> - </label></li>
+                </div>
             </div>
             <div class="col-1"></div>
         </div>
