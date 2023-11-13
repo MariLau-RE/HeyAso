@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="public/styles/mainStyle.css" />
+    <link rel="stylesheet" href="public/styles/Formularios.css" />
+    <title>ModificarAsociación</title>
+  </head>
+  <header>
+    <img src="public/images/logo.png" class="logo" />
+    <label><strong>HeyAso</strong></label>
+  </header>
+
+  <body>
+    <form>
+      <div class="container">
+        <div class="column left-column">
+          <div class="title">
+            <h1>Modificar Asociación</h1>
+          </div>
+           <!-- <el id de la asociacion no se actualiza> -->
+          <div class="formulario">
+            <label for="idAso">ID Asociación:</label>
+            <br />
+            <input type="text" id="idAso" name="idAso" required />
+            <br />
+            <label for="nombre">Nombre:</label>
+            <br />
+            <input type="text" id="nombre" name="nombre" required />
+            <br />
+            <label for="codigo">Codigo de carrera:</label>
+            <br />
+            <input type="text" id="codigo" name="codigo" required />
+            <br />
+            <label for="contacto">Contacto:</label>
+            <br />
+            <input type="text" id="contacto" name="contacto" required />
+            <br />
+            <label for="descripcion">Descripción:</label>
+            <br />
+            <input type="text" id="descripcion" name="descripcion" required />
+            <br />            
+          </div>
+        </div>
+        <div class="column right-column">
+          <h4><div id="dataDisplay" style = "display: flex; justify-content: center"></div></h4>
+          <input id="btnModificar" type="button" class="btn" value="Actualizar" style="margin-bottom: 0px"/>
+          <a href="GestionAsociación.html"><input type="button" class="btn" value="Volver"/><br /></a>
+          
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

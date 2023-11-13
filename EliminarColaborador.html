@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="public/styles/mainStyle.css" />
+    <link rel="stylesheet" href="public/styles/Formularios.css" />
+    <title>EliminarColaborador</title>
+  </head>
+  <header>
+    <img src="public/images/logo.png" class="logo" />
+    <label><strong>HeyAso</strong></label>
+  </header>
+
+  <body>
+    <form>
+      <div class="container">
+        <div class="column left-column">
+          <div class="title">
+            <h1>Eliminar Colaborador</h1>
+          </div>
+
+          <div class="formulario">
+            <label for="asociacion">Asociación:</label>
+            <select id="asociacion" name="asociacion" style="width: 59%">
+                <option value='0' selected >Seleccionar Asociación</option>
+            </select>
+            <br /><br /><br />
+
+            <label for="colaborador">colaborador:</label>
+            <select id="colaborador" name="colaborador" style="width: 59%">
+                <option value='0' selected >Seleccionar Colaborador</option>
+            </select>
+            <br /><br /><br />
+            
+          </div>
+        </div>
+        <div class="column right-column">
+          <h4><div id="dataDisplay" style = "display: flex; justify-content: center"></div></h4>
+          <input id="btnEliminar" type="button" class="btn" value="Eliminar" style="margin-bottom: 0px"/>
+          <a href="AdministrarColaborador.html"><input type="button" class="btn" value="Volver"/><br /></a>
+          
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

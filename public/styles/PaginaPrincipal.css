@@ -50,6 +50,14 @@ h1 {
   border-radius: 20px 20px 20px 20px;
 }
 
+.groupbutton {
+  width: 380px;
+  height: 130px;
+  margin: 30px auto;
+  border: none;
+  border-radius: 20px 20px 20px 20px;
+}
+
 .group p {
   margin: 10px 30px 35px 30px;
 }

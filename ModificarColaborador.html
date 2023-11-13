@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="public/styles/mainStyle.css" />
+    <link rel="stylesheet" href="public/styles/Formularios.css" />
+    <title>ModificarColaborador</title>
+  </head>
+  <header>
+    <img src="public/images/logo.png" class="logo" />
+    <label><strong>HeyAso</strong></label>
+  </header>
+
+  <body>
+    <form>
+      <div class="container">
+        <div class="column left-column">
+          <div class="title">
+            <h1>Modificar Colaborador</h1>
+          </div>
+          <div class="formulario">
+            <label for="nombre">Nombre Completo:</label>
+            <br />
+            <input type="text" id="nombre" name="nombre" required />
+            <br />
+            <label for="codigo">Codigo de carrera:</label>
+            <br />
+            <input type="text" id="codigo" name="codigo" required />
+            <br />
+            <label for="puesto">Puesto:</label>
+            <select id="puesto" name="puesto" style="width: 59%">
+                <option value='0' selected >Seleccionar puesto</option>
+            </select>
+            <br /><br /><br />
+
+            <label for="asociacion">Asociación:</label>
+            <select id="asociacion" name="asociacion" style="width: 59%">
+                <option value='0' selected >Seleccionar Asociación</option>
+            </select>
+            <br /><br /><br />
+
+            <label for="correo">Correo:</label>
+            <br />
+            <input type="text" id="correo" name="correo" required />
+            <br />
+            <label for="contrasenna">Contraseña:</label>
+            <br />
+            <input type="text" id="contrasenna" name="contrasenna" required />
+            <br />
+            <label for="contacto">Contacto:</label>
+            <br />
+            <input type="text" id="contacto" name="contacto" required />
+            <br />
+            <label for="descripcion">Descripción:</label>
+            <br />
+            <input type="text" id="descripcion" name="descripcion" required />
+            <br />            
+          </div>
+        </div>
+        <div class="column right-column">
+          <h4><div id="dataDisplay" style = "display: flex; justify-content: center"></div></h4>
+          <input id="btnModificar" type="button" class="btn" value="Modificar" style="margin-bottom: 0px"/>
+          <a href="AdministrarColaborador.html"><input type="button" class="btn" value="Volver"/><br /></a>
+          
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
