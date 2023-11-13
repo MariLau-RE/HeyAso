@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="public/styles/mainStyle.css" />
     <link rel="stylesheet" href="public/styles/Formularios.css" />
+    <script type="module" src="./Backend/administrarColaborador/modificarColaborador.js"></script>
     <title>ModificarColaborador</title>
   </head>
   <header>
@@ -19,17 +20,30 @@
             <h1>Modificar Colaborador</h1>
           </div>
           <div class="formulario">
+            <label for="carnet">Nombre:</label>
+            <select id="colaboradores" name="carnet" style="width: 59%">
+              <option value='0' selected >Seleccionar Colaborador</option>
+            </select>
+            <br /><br /><br />
             <label for="nombre">Nombre Completo:</label>
             <br />
-            <input type="text" id="nombre" name="nombre" required />
+            <input type="text" id="nombre" name="nombre" disabled />
             <br />
-            <label for="codigo">Codigo de carrera:</label>
+            <label for="codigo">Carrera:</label>
             <br />
-            <input type="text" id="codigo" name="codigo" required />
+            <input type="text" id="carrera" name="codigo" disabled />
             <br />
             <label for="puesto">Puesto:</label>
             <select id="puesto" name="puesto" style="width: 59%">
                 <option value='0' selected >Seleccionar puesto</option>
+                <option value='Presidente' >Presidente</option>
+                <option value='Vicepresidente' >Vicepresidente</option>
+                <option value='Secretario' >Secretario</option>
+                <option value='Tesorero' >Tesorero</option>
+                <option value='Fiscal' >Fiscal</option>
+                <option value='Vocal1' >Vocal 1</option>
+                <option value='Vocal2' >Vocal 2</option>
+                <option value='Otro' >Otro</option>
             </select>
             <br /><br /><br />
 
@@ -41,25 +55,17 @@
 
             <label for="correo">Correo:</label>
             <br />
-            <input type="text" id="correo" name="correo" required />
-            <br />
-            <label for="contrasenna">Contraseña:</label>
-            <br />
-            <input type="text" id="contrasenna" name="contrasenna" required />
+            <input type="text" id="correo" name="correo" disabled />
             <br />
             <label for="contacto">Contacto:</label>
             <br />
-            <input type="text" id="contacto" name="contacto" required />
-            <br />
-            <label for="descripcion">Descripción:</label>
-            <br />
-            <input type="text" id="descripcion" name="descripcion" required />
+            <input type="text" id="contacto" name="contacto" disabled />
             <br />            
           </div>
         </div>
         <div class="column right-column">
           <h4><div id="dataDisplay" style = "display: flex; justify-content: center"></div></h4>
-          <input id="btnModificar" type="button" class="btn" value="Modificar" style="margin-bottom: 0px"/>
+          <input id="btnModificar" type="button" class="btn" value="Modificar" style="margin-bottom: 0px" onclick="modificarColab()"/>
           <a href="AdministrarColaborador.html"><input type="button" class="btn" value="Volver"/><br /></a>
           
         </div>

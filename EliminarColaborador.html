@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="public/styles/mainStyle.css" />
     <link rel="stylesheet" href="public/styles/Formularios.css" />
+    <script type="module" src="./Backend/administrarColaborador/eliminarColaborador.js"></script>
     <title>EliminarColaborador</title>
   </head>
   <header>
@@ -36,7 +37,7 @@
         </div>
         <div class="column right-column">
           <h4><div id="dataDisplay" style = "display: flex; justify-content: center"></div></h4>
-          <input id="btnEliminar" type="button" class="btn" value="Eliminar" style="margin-bottom: 0px"/>
+          <input id="btnEliminar" type="button" class="btn" value="Eliminar" style="margin-bottom: 0px" onclick="eliminarColaborador()"/>
           <a href="AdministrarColaborador.html"><input type="button" class="btn" value="Volver"/><br /></a>
           
         </div>
