@@ -15,7 +15,7 @@ async function registroAsociacion() {
     alert("Debe completar todos los campos");
   }else{
     try {
-      await setDoc(doc(asociaciones, identificador), {
+      await setDoc(doc(asociaciones, "Aso"+identificador), {
         idAsociacion: "Aso"+identificador,
         nombre: nombre,
         codCarrera: codCarrera,
@@ -24,6 +24,7 @@ async function registroAsociacion() {
       });
       console.log("Asocia registrada con ID: ", identificador);
       alert("Asociación creada con éxito");
+      window.location.href="../PaginaPrincipal.html"
     } catch (e) {
       console.error("Error al agregar el documento: ", e);
     }
