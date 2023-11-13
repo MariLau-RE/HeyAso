@@ -4,7 +4,7 @@ import { db } from "../configDatabase.js"
 const propuestas = collection(db, 'Propuestas');
 ;const listaPropuesta = await getDocs(propuestas);
 
-var select = document.getElementById("selectEvento");
+var select = document.getElementById("selectPropuesta");
 
 listaPropuesta.docs.forEach(doc => {
     // Creas un nuevo elemento option
