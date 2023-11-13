@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
+    <script type="module" src="./Backend/menuColaborador/modificarEvento.js"></script>
     <link rel="stylesheet" href="public/styles/styles.css">
 
 </head>
@@ -37,8 +37,8 @@
                     <br /><br /><br />
 
                     <div class="row justify-content-center">
-                        <input id="btn_actualizar" type="button" class="btn" value="Actualizar evento" onclick="">
-                        <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
+                        <input id="btn_actualizar" type="button" class="btn" value="Actualizar evento" onclick="modificarEvento()">
+                        <input id="btn_volver" type="button" onclick="window.location.href='AdministrarEvento.html'" class="btnBack" value="Volver" />
                     </div>
                 </form>
             </div>
@@ -68,7 +68,12 @@
                     <div class="inputDiv" style="margin-top: 35px;">
                         <select class="form-select form-select-lg mb-3" aria-label="Large select example"
                             id="selectCategoria">
-                            <option value='0' selected>Seleccionar Categoría</option>
+                            <option value='0' selected >Seleccionar Categoría</option>
+                            <option value="Charla">Charla</option>
+                            <option value="Convivio">Convivio</option>
+                            <option value="Taller">Taller</option>
+                            <option value="Competencia">Competencia</option>
+                            <option value="Otro">Otro</option>
                         </select>
                     </div>
 
@@ -104,7 +109,7 @@
                     </div>
 
                     <div class="form-check form-check-inline" style="margin-top: 20px; margin-bottom: 40px;">
-                        <input class="form-check-input" type="checkbox" id="habEncuesta" value="optionInsta">
+                        <input class="form-check-input" type="checkbox" id="encuesta" value="optionInsta">
                         <label class="form-check-label" for="habEncuesta">Habilitar encuestra de retroalimentación</label>
                     </div>
                 </form>

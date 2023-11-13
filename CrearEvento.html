@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
+    <script type="module" src="./Backend/menuColaborador/crearEvento.js"></script>
     <link rel="stylesheet" href="public/styles/styles.css">
 
 </head>
@@ -30,18 +30,18 @@
 
                     <div class="inputDiv">
                         <div>
-                            <input id="identificador" class="input" type="text" placeholder="Identificador" required/>
+                            <input id="identificador" value='' class="input" type="text" placeholder="Identificador" required/>
                         </div>
                     </div>
                     <div class="inputDiv">
                         <div>
-                            <input id="titulo" class="input" type="text" placeholder="Título" required/>
+                            <input id="titulo" value='' class="input" type="text" placeholder="Título" required/>
                         </div>
                     </div>
 
                     <div class="inputDiv">
                         <div>
-                            <input id="descripcion" class="input" type="text" placeholder="Descripción" required/>
+                            <input id="descripcion" value='' class="input" type="text" placeholder="Descripción" required/>
                         </div>
                     </div>
 
@@ -54,18 +54,23 @@
                     <div class="inputDiv" style="margin-top: 35px;">
                         <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectCategoria">
                             <option value='0' selected >Seleccionar Categoría</option>
+                            <option value="1">Charla</option>
+                            <option value="2">Convivio</option>
+                            <option value="3">Taller</option>
+                            <option value="4">Competencia</option>
+                            <option value="5">Otro</option>
                         </select>
                     </div>
 
                     <div class="inputDiv">
                         <div>
-                            <input id="lugar" class="input" type="text" placeholder="Lugar" required/>
+                            <input id="lugar" value='' class="input" type="text" placeholder="Lugar" required/>
                         </div>
                     </div>
 
                     <div class="inputDiv">
                         <div>
-                            <input id="capacidad" class="input" type="number" placeholder="Capacidad" required />
+                            <input id="capacidad" value='' class="input" type="number" placeholder="Capacidad" required />
                         </div>
                     </div>
                 </form>
@@ -76,30 +81,30 @@
                 <form id="crearEvento">
                     <div class="inputDiv">
                         <div>
-                            <input id="fecha" class="input" type="date" placeholder="Fecha" required />
+                            <input id="fecha" value='' class="input" type="date" placeholder="Fecha" required />
                         </div>
                     </div>
 
                     <div class="inputDiv">
                         <div>
-                            <input id="duracion" class="input" type="number" placeholder="Duración (minutos)" required />
+                            <input id="duracion" value='' class="input" type="number" placeholder="Duración (minutos)" required />
                         </div>
                     </div>
 
                     <div class="inputDiv">
                         <div>
-                            <input id="requisitos" class="input" type="text" placeholder="Requisitos especiales" required />
+                            <input id="requisitos" value='' class="input" type="text" placeholder="Requisitos especiales" required />
                         </div>
                     </div>
 
                     <div class="form-check form-check-inline" style="margin-top: 20px; margin-bottom: 40px;">
-                        <input class="form-check-input" type="checkbox" id="habEncuesta" value="optionInsta">
+                        <input class="form-check-input" type="checkbox" id="encuesta" value="optionInsta">
                         <label class="form-check-label" for="habEncuesta">Habilitar encuestra de retroalimentación</label>
                     </div>
                     
                     <div class="row justify-content-center">
-                        <input id="btn_crear" type="button" class="btn" value="Crear" onclick="">
-                        <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
+                        <input id="btn_crear" type="button" class="btn" value="Crear" onclick="crearEvento()">
+                        <input id="btn_volver" type="button" onclick="window.location.href='AdministrarEvento.html'" class="btnBack" value="Volver" />
                     </div>
                 </form>
             </div>

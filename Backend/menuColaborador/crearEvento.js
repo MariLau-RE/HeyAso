@@ -1,48 +1,84 @@
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+import { collection, addDoc, getDocs, query, where} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 import { db } from "../configDatabase.js"
 
-const usuarios = collection(db, 'Evento');
+const selectAso = document.getElementById("selectAso");
+const selectCategoria = document.getElementById("selectCategoria");
+
+async function verificarIdEvento(idEvento) {
+  const q = query(collection(db, "Evento"), where("idEvento", "==", idEvento));
+  const querySnapshot = await getDocs(q);
+  if (!querySnapshot.empty) {
+      return false
+  } else {
+      return true;
+  }
+}
+
+function formatearFecha(fecha){
+  var partes = fecha.split("-");
+  return partes[2] + "/" + partes[1] + "/" + partes[0];
+}
 
 async function crearEvento() {
-  var idEvento = getInputVal("idEvento")
-  var titulo = getInputVal("titulo");
-  var descripcion = getInputVal("descripcion");
-  var lugar = getInputVal("lugar");
-  var duracion = getInputVal("duracion");
-  var fecha = getInputVal("fecha");
-  var categoria = getInputVal("categoria");
-  var requisitos = getInputVal("requisitos");
-  var capacidad = getInputVal("capacidad");
-  //encuesta falta
-  
+  const eventos = collection(db, 'Evento');
+  console.log("Creando evento");
 
-  if(titulo == '' || lugar == '' || duracion == '' || fecha == '' || categoria == '' || descripcion == ''){
+  var idEvento = document.getElementById("identificador").value;
+  var titulo = document.getElementById("titulo").value;
+  var descripcion = document.getElementById("descripcion").value;
+  var lugar = document.getElementById("lugar").value;
+  var duracion = document.getElementById("duracion").value;
+  var fecha = document.getElementById("fecha").value;
+  var categoria = selectCategoria.options[selectCategoria.selectedIndex];
+  var asociacion = selectAso.options[selectAso.selectedIndex];
+  var requisitos = document.getElementById("requisitos").value;
+  var capacidad = document.getElementById("capacidad").value;
+  var encuesta = document.getElementById("encuesta").checked;
+
+  if(idEvento == '' || titulo == '' || lugar == '' || duracion == '' || fecha == '' || descripcion == '' || capacidad == '' || categoria.text == 'Seleccione una categoría' || asociacion.text == 'Seleccione una asociación'){
     alert("Debe completar todos los campos(no opcionales)");
-  }else{
+  } 
+  else if(!await verificarIdEvento("Evento" + idEvento)){
+    alert("El identificador ya está en uso");
+  }
+  else{
     try {
-      const docRef = await addDoc(usuarios, {
-        idEvento: idEvento,
+      const docRef = await addDoc(eventos, {
+        idEvento: "Evento" + idEvento,
+        idAsociacion: asociacion.value,
         titulo: titulo,
         descripcion: descripcion,
         lugar: lugar,
         duracion: duracion,
-        fecha: fecha,
-        categoria: categoria,
+        fecha: formatearFecha(fecha),
+        categoria: categoria.text,
         requisitos: requisitos,
-        capacidad: capacidad
+        capacidad: Number(capacidad),
+        encuesta: encuesta
       });
-      console.log("Evento creado con ID: ", docRef.id);
       alert("Evento creado con éxito");
+      window.location.href = "AdministrarEvento.html";
     } catch (e) {
       console.error("Error al agregar el documento: ", e);
     }
-  }
-
-  // Function to get form values
-  function getInputVal(id) {
-    return document.getElementById(id).value;
-  }
+  } 
 }
+
+window.addEventListener('DOMContentLoaded', async (event) => {
+  // Cargar una asociacion
+  const asociaciones = collection(db, 'Asociacion');
+  const listaAsociaciones = await getDocs(asociaciones);
+  const selectAsociacion = document.getElementById("selectAso");
+
+  listaAsociaciones.docs.forEach(doc => {
+    var option = document.createElement("option");
+    option.value = doc.data().idAsociacion;
+    option.text = doc.data().idAsociacion + " - " + doc.data().nombre;
+    selectAsociacion.appendChild(option);
+  });
+
+
+});
 
 // Asigna crearEvento al objeto window
 window.crearEvento = crearEvento;
