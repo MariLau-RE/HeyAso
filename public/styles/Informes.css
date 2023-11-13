@@ -1,0 +1,92 @@
+.container-informes-estadisticas {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container-informes-estadisticas h1{
+    margin: 40px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container-informes-estadisticas input[type="button"]{
+    width: 200px;
+    height: 40px;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #DD68E5;
+    transition: all 0.3s ease 0s;
+    margin-top: 10px;
+}
+
+.container-informes-estadisticas input[type="button"]:hover {
+    color: black;
+}
+
+.layout-informes-estadisticas{
+    width: 1300px;
+    height: 400px;
+    margin: 25px auto 30px auto;
+  
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.layout-informes-estadisticas .titulo-informes-estadisticas{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.layout-informes-estadisticas .container-izq{
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgb(138, 137, 137);
+}
+
+.layout-informes-estadisticas .container-izq p{
+    font-size: 17px;
+    margin: 35px 100px 40px 100px;
+    text-align: justify;
+    color: rgb(138, 137, 137);
+}
+
+.layout-informes-estadisticas .container-izq li{
+    font-size: 17px;
+    margin: 35px 100px 40px 100px;
+    text-align: justify;
+}
+
+.layout-informes-estadisticas .container-der{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-left: 1px solid rgb(138, 137, 137);
+}
+
+.layout-informes-estadisticas .container-der .selectEvent{
+    width: 100px;
+    height: 30px;
+    margin: 35px 100px 40px 100px;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.layout-informes-estadisticas .container-der li{
+    font-size: 17px;
+    margin: 26px 100px 40px 100px;
+    text-align: justify;
+}
+

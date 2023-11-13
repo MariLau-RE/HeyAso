@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Informes y Estadisticas</title>
+    <link rel="stylesheet" href="public/styles/Informes.css"/>
+    <link rel="stylesheet" href="public/styles/mainStyle.css"/>
+    <script type="module" src="./Backend/opcionesEvento/informesEstadisticas.js"></script>
+
+</head>
+
+<body Style="background:white">
+    <header>
+        <img src="public/images/logo.png" class="logo">
+        <p><strong><br />HeyAso</strong></p>
+    </header>
+        <div class="container-informes-estadisticas">
+            <h1>Informes y Estadísticas</h1>
+            <section class="layout-informes-estadisticas">
+                <div class="container-izq">
+                    <div class="titulo-informes-estadisticas">Generalidades</div><br/>
+                    <p>Se muestran las estadísticas generales de todos los eventos ya realizados por las asosiaciones inscritas con sus respectivos colaboradores.</p>
+                    <li>Promedio participantes: <label id="promedioParticipantes" value="0">-</label></li>
+                    <li>Promedio inscripciones: <label id="promedioInscripciones" value="0">-</label></li>
+                    <li>Promedio duración (min): <label id="promedioDuracion" value="0">-</label></li>
+                    <li>Categoría más utilizada: <label id="topCategoria" value="0">-</label></li>
+                </div>
+                <div class="container-der">
+                    <div class="titulo-informes-estadisticas">Informe específico</div><br/>
+                    <select class="selectEvent" id="evento" name="evento" style="width: 59%">
+                        <option value='0' selected>Seleccionar un evento</option>
+                    </select>
+                    <li>Asociación a cargo: <label id="asociacion" value="0">-</label></li>
+                    <li>Cantidad máxima de participantes: <label id="participantes" value="0">-</label></li>
+                    <li>Cantidad de inscripciones: <label id="inscripciones" value="0">-</label></li>
+                    <li>Lugar donde se realizó: <label id="lugar" value="0">-</label></li>
+                </div>
+            </section>
+            <a href="OpcionesEvento.html"><input type="button" class="btn" value="Volver"/><br /></a>
+        </div>
+</body>
+
+</html>
