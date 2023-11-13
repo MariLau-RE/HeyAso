@@ -125,8 +125,7 @@ select {
   margin-top: -12px;
   border: none;
   background: none;
-  font-size: 18px;
-  font-weight: bolder;
+  font-size: 16px;
 }
 
 select:focus {
@@ -155,6 +154,7 @@ footer {
   grid-template-columns: 7% 93%;
   padding: 12px 0;
   border-bottom: 3px solid #d9d9d9;
+  font-weight: normal;
 }
 
 .inputDiv div {
@@ -194,6 +194,12 @@ footer {
 ::placeholder {
   color: black; 
   font-family: Arial; 
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+/* Estilo predeterminado para el input date y su placeholder */
+.inputDiv input[type="date"] {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
 }

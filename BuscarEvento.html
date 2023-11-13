@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Compartir Redes</title>
+    <title>Buscar Evento</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
     <link rel="stylesheet" href="public/styles/styles.css">
 
 </head>
@@ -22,51 +23,31 @@
         <div class="row align-items-center">
             <div class="col-2"></div>
             <div class="col-4">
-                <form id="compartirEvento">
+                <form id="buscarEvento">
                     <div class="row">
-                        <h2 style="color:black">Compartir en redes</h2><br /><br /><br />
+                        <h2 style="color:black">Buscar Evento</h2><br /><br /><br/>
                     </div>
 
-                    <div class="inputDiv">
-                        <div>
-                            <input id="descripcion" class="input" type="text" placeholder="Descripción" required/>
-                        </div>
+                    <div class="inputDiv" style="margin-top: 35px;">
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectEvento">
+                            <option value='0' selected >Seleccionar Evento</option>
+                        </select>
                     </div>
-
-                    <div class="inputDiv">
-                        <div>
-                            <input id="tags" class="input" type="text" placeholder="Tags" required />
-                        </div>
-                    </div>
-
-                    <div class="inputDiv">
-                        <div>
-                            <input id="lugar" class="input" type="text" placeholder="Lugar" required />
-                        </div>
-                    </div><br/>
-
-                    <br/><br/>
+                    <br/><br/><br/>
 
                     <div class="row justify-content-center">
-                        <input id="btn_compartir" type="button" class="btn" value="Compartir" onclick="compartirRedes()">
+                        <input id="btn_buscar" type="button" class="btn" value="Buscar" onclick="">
                         <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
                     </div>
-
                 </form>
             </div>
             <div class="col-1"></div>
 
             <div class="col-4 justify-content-center">
-                <div class="card">
-                    <div class="card-body" style="background-color: #DCF2FC;">
-                        <h4 style="font-weight: bolder;" class="card-title">Imagen del evento</h4>
-                        <img src="./public/images/fondo.jpg" style="max-width: 310px;"/> <!-- cambiar imagen -->
-                    </div>
-                </div>                
+                <label>Mostrar info acá *******</label>
             </div>
             <div class="col-1"></div>
         </div>
-
     </div>
     </div>
 
@@ -75,8 +56,6 @@
     </div>
 
     <!-- Optional JavaScript -->
-    <script type="module" src="./Backend/opcionesEvento/compartirRedes.js"></script>
-
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

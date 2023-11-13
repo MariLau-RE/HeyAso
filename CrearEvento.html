@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Crear Evento</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
+    <link rel="stylesheet" href="public/styles/styles.css">
+
+</head>
+
+<body Style="background:white">
+    <header>
+        <img src="public/images/logo.png" class="logo">
+        <p><strong><br />HeyAso</strong></p>
+    </header>
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <form id="crearEvento">
+                    <div class="row">
+                        <h2 style="color:black">Crear Evento</h2><br /><br />
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="identificador" class="input" type="text" placeholder="Identificador" required/>
+                        </div>
+                    </div>
+                    <div class="inputDiv">
+                        <div>
+                            <input id="titulo" class="input" type="text" placeholder="Título" required/>
+                        </div>
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="descripcion" class="input" type="text" placeholder="Descripción" required/>
+                        </div>
+                    </div>
+
+                    <div class="inputDiv" style="margin-top: 35px;">
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectAso">
+                            <option value='0' selected >Seleccionar Asociación</option>
+                        </select>
+                    </div>
+
+                    <div class="inputDiv" style="margin-top: 35px;">
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectCategoria">
+                            <option value='0' selected >Seleccionar Categoría</option>
+                        </select>
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="lugar" class="input" type="text" placeholder="Lugar" required/>
+                        </div>
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="capacidad" class="input" type="number" placeholder="Capacidad" required />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-4 justify-content-center">
+                <form id="crearEvento">
+                    <div class="inputDiv">
+                        <div>
+                            <input id="fecha" class="input" type="date" placeholder="Fecha" required />
+                        </div>
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="duracion" class="input" type="number" placeholder="Duración (minutos)" required />
+                        </div>
+                    </div>
+
+                    <div class="inputDiv">
+                        <div>
+                            <input id="requisitos" class="input" type="text" placeholder="Requisitos especiales" required />
+                        </div>
+                    </div>
+
+                    <div class="form-check form-check-inline" style="margin-top: 20px; margin-bottom: 40px;">
+                        <input class="form-check-input" type="checkbox" id="habEncuesta" value="optionInsta">
+                        <label class="form-check-label" for="habEncuesta">Habilitar encuestra de retroalimentación</label>
+                    </div>
+                    
+                    <div class="row justify-content-center">
+                        <input id="btn_crear" type="button" class="btn" value="Crear" onclick="">
+                        <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
+                    </div>
+                </form>
+            </div>
+            <div class="col-1"></div>
+        </div>
+
+    </div>
+    </div>
+
+    </div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
