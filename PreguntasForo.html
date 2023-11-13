@@ -8,7 +8,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
     <link rel="stylesheet" href="public/styles/styles.css">
 
 </head>
@@ -49,24 +48,9 @@
     </div>
     </div>
 
-    </div>
-
-    </div>
-
     <!-- Optional JavaScript -->
-    <script>
-        const submitButton = document.getElementById("submit-button");
-        const commentInput = document.getElementById("comment-input");
-        const commentsContainer = document.getElementById("comments-container");
-
-        submitButton.addEventListener("click", function() {
-        const comment = commentInput.value;
-        const commentElement = document.createElement("div");
-        commentElement.innerHTML = comment;
-        commentsContainer.appendChild(commentElement);
-        commentInput.value = "";
-        });
-    </script>
+    <script type="module" src="./Backend/foro/preguntasForo.js"></script>
+   
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
