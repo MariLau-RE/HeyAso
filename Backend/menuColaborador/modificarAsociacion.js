@@ -9,20 +9,23 @@ select.addEventListener('change', function() {
   var asoSelect = this.value;
   console.log(asoSelect);
 
-  listaAsociacion.docs.forEach(docAs => {
-    if(docAs.data().idAsociacion == asoSelect){
-      document.getElementById("nombre").value = docAs.data().nombre;
-      document.getElementById("codigo").value = docAs.data().codCarrera;
-      document.getElementById("contacto").value = docAs.data().contacto;
-      document.getElementById("descripcion").value = docAs.data().descripcion;
-    }else{
-      document.getElementById("nombre").value = '';
-      document.getElementById("codigo").value = '';
-      document.getElementById("contacto").value = '';
-      document.getElementById("descripcion").value = '';
-    }
-  });
+  if(asoSelect == '0'){
+    document.getElementById("nombre").value = '';
+    document.getElementById("codigo").value = '';
+    document.getElementById("contacto").value = '';
+    document.getElementById("descripcion").value = '';
+  }else{
+    listaAsociacion.docs.forEach(docAs => {
+      if(docAs.data().idAsociacion == asoSelect){
+        document.getElementById("nombre").value = docAs.data().nombre;
+        document.getElementById("codigo").value = docAs.data().codCarrera;
+        document.getElementById("contacto").value = docAs.data().contacto;
+        document.getElementById("descripcion").value = docAs.data().descripcion;
+      }
+    });
+  }
 });
+
 
 listaAsociacion.docs.forEach(doc => {
     // Creas un nuevo elemento option
@@ -57,6 +60,7 @@ async function modificarAsociacion() {
        });
        console.log("Asocia registrada con ID: ", id);
        alert("Asociación modificada con éxito");
+       window.location.href="../GestionAsociacion.html";
     } catch (e) {
       console.error("Error al actualizar el documento: ", e);
     }
