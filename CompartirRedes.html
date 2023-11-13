@@ -8,7 +8,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
     <link rel="stylesheet" href="public/styles/styles.css">
 
 </head>
@@ -30,7 +29,7 @@
 
                     <div class="inputDiv">
                         <div>
-                            <input id="descripción" class="input" type="text" placeholder="Descripción" required/>
+                            <input id="descripcion" class="input" type="text" placeholder="Descripción" required/>
                         </div>
                     </div>
 
@@ -46,19 +45,10 @@
                         </div>
                     </div><br/>
 
-                    <div class="form-check form-check-inline">
-                        <label class="form-check-label" style="margin-right: 20px;">Compartir en</label>
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="optionFace">
-                        <label class="form-check-label" for="inlineCheckbox1">Facebook</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="optionInsta">
-                        <label class="form-check-label" for="inlineCheckbox2">Instagram</label>
-                    </div>
                     <br/><br/>
 
                     <div class="row justify-content-center">
-                        <input id="btn_compartir" type="button" class="btn" value="Compartir" onclick="">
+                        <input id="btn_compartir" type="button" class="btn" value="Compartir" onclick="compartirRedes()">
                         <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
                     </div>
 
@@ -85,6 +75,8 @@
     </div>
 
     <!-- Optional JavaScript -->
+    <script type="module" src="./Backend/opcionesEvento/compartirRedes.js"></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
