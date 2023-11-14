@@ -8,7 +8,6 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
     <link rel="stylesheet" href="public/styles/styles.css">
 
 </head>
@@ -32,12 +31,6 @@
                         <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectEvento">
                             <option value='0' selected >Seleccionar evento</option>
                         </select>
-                    </div>
-
-                    <div class="inputDiv">
-                        <div>
-                            <input id="identificador" class="input" type="text" placeholder="Identificador" required/>
-                        </div>
                     </div>
 
                     <div class="inputDiv">
@@ -82,7 +75,7 @@
                 <br/>
 
                 <div class="row justify-content-center">
-                    <input id="btn_agregarActividad" type="button" class="btn" value="Añadir actividad" onclick="">
+                    <input id="btn_agregarActividad" type="button" class="btn" value="Añadir actividad" onclick="crearActividad()">
                     <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
                 </div>
             </div>
@@ -96,6 +89,8 @@
     </div>
 
     <!-- Optional JavaScript -->
+    <script type="module" src="./Backend/opcionesEvento/crearActividad.js"></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

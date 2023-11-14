@@ -1,23 +1,73 @@
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 import { db } from "../configDatabase.js"
 
-const duracion = collection(db, 'Actividad');
+const actividades = collection(db, 'Actividades');
+const eventos = collection(db, 'Evento');
+const usuarios = collection(db, 'Usuarios');
+
+const listaEvento = await getDocs(eventos);
+const listaUsuario = await getDocs(usuarios);
+
+var selectEvento = document.getElementById("selectEvento");
+var selectColab = document.getElementById("selectEncargado");
+
+listaEvento.forEach(docEv =>{
+  // Creas un nuevo elemento option
+  var option = document.createElement("option");
+        
+  // Le asignas un valor y un texto
+  option.value = docEv.data().idEvento+","+docEv.data().idAsociacion;
+  option.text = docEv.data().titulo;
+                          
+  // Agregas la opción al select
+  selectEvento.appendChild(option);
+});
+
+selectEvento.addEventListener('change', function() {
+  var eventSel = this.value.split(",")[1];
+  console.log(eventSel);
+
+
+  // Elimina todas las opciones existentes, excepto la primera
+  while (selectColab.options.length > 1) {
+      selectColab.remove(1);
+  }
+
+  if(eventSel == '0'){
+    selectColab.value = '0';
+  }else{
+    listaUsuario.forEach(docUs =>{
+      if(docUs.data().idAsociacion == eventSel){
+        // Creas un nuevo elemento option
+        var option = document.createElement("option");
+            
+        // Le asignas un valor y un texto
+        option.value = docUs.data().carnet;
+        option.text = docUs.data().nombre;
+                              
+        // Agregas la opción al select
+        selectColab.appendChild(option);
+      }
+    });
+  }
+});
+
 
 async function crearActividad() {
-    var titulo = getInputVal("titulo");
-    var descripcion = getInputVal("descripcion");
-    var idEvento = getInputVal("idEvento");
-    var recursos = getInputVal("recursos");
-    var duracion = getInputVal("duracion");
-    var encargado= getInputVal("encargado");
-    var lugar = getInputVal("lugar");
-
-
-    if(titulo == '' || recursos == '' || duracion == '' || idEvento == '' || descripcion == '' || lugar == '' || encargado == ''){
-      alert("Debe completar todos los campos(no opcionales)");
+  var idEvento = selectEvento.value.split(",")[0];
+  var titulo = getInputVal("titulo");
+  var lugar = getInputVal("lugar");
+  var duracion = getInputVal("duracion");
+  var descripcion = getInputVal("descripcion");
+  var recursos = getInputVal("recursos");
+  var encargado= selectColab.value;
+    
+    if(titulo == '' || recursos == '' || duracion == '' || idEvento == '0' || descripcion == '' || lugar == '' || encargado == '0'){
+      alert("Debe completar todos los campos");
     }else{
+      console.log("ENTROO")
       try {
-        const docRef = await addDoc(duracion, {
+        const docRef = await addDoc(actividades, {
           idEvento: idEvento,
           titulo: titulo,
           descripcion: descripcion,
@@ -27,6 +77,7 @@ async function crearActividad() {
           encargado: encargado,
           lugar: lugar
         });
+
         console.log("Actividad creada con ID: ", docRef.id);
         alert("Actividad creada con éxito");
       } catch (e) {
@@ -40,5 +91,4 @@ async function crearActividad() {
     }
   }
 
-// Asigna crearencargadoal objeto window
-window.crearencargado= crearActividad;
+window.crearActividad = crearActividad;

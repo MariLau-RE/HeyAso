@@ -1,86 +1,26 @@
 <!DOCTYPE html>
-<html lang="EN">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Administrar Agenda</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <script type="module" src="./Backend/menuEstudiante/inscripcionEvento.js"></script>
-    <link rel="stylesheet" href="public/styles/styles.css">
-
-</head>
-
-<body Style="background:white">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="public/styles/mainStyle.css" />
+    <link rel="stylesheet" href="public/styles/Menu.css" />
+    <link rel="stylesheet" href="public/styles/PaginaPrincipal.css">
+    <title>AdministrarAgenda</title>
+  </head>
     <header>
         <img src="public/images/logo.png" class="logo">
-        <p><strong><br />HeyAso</strong></p>
+        <p><strong>HeyAso</strong></p>
     </header>
-
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col"></div>
-
-            <div class="col justify-content-center">
-                <form id="agendaEvento">
-                    <div class="row justify-content-center" style="margin-bottom: 40px;">
-                        <h2 style="color:black; margin-top: -40px;">Administrar agenda</h2>
-                    </div>
-
-                    <div class="inputDiv">
-                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectEncargado">
-                            <option value='0' selected >Encargado</option>
-                        </select>
-                    </div>
-                    
-                    <div class="inputDiv" style="margin-top:40px;">
-                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="selectCapacidad">
-                            <option value='0' selected >Capacidad</option>
-                        </select>
-                    </div>
-
-                    <div class="inputDiv">
-                        <div>
-                            <input id="actividad" class="input" type="text" placeholder="Título actividad" required/>
-                        </div>
-                    </div>
-
-                    <div class="inputDiv">
-                        <div>
-                            <input id="descripcion" class="input" type="text" placeholder="Descripción" required />
-                        </div>
-                    </div>
-
-                    <div class="inputDiv">
-                        <div>
-                            <input id="duracion" class="input" type="number" placeholder="Duración (minutos)" required />
-                        </div>
-                    </div><br/>  
-                    <div class="row justify-content-center">
-                        <input id="btn_actividad" type="button" class="btn" value="Añadir actividad" onclick="">
-                        <input id="btn_otraActividad" type="button" class="btn" value="Otra actividad" onclick="">
-                        <input id="btn_volver" type="button" onclick="history.back()" class="btnBack" value="Volver" />
-                    </div>                  
-                </form>
-            </div>
-            <div class="col"></div>
-            </div>
+        <h1>Administrar Agenda</h1>
+        <br>
+        <h3 style="color: white; font-size: 20px;">Seleccione la opción a realizar</h3>
+        <div class="groupbutton">
+            <a href="CrearActividad.html"><input type="submit" class="btn" value="Crear Actividad"/></a><br>
+            <a href="ModificarActividad.html"><input type="submit" class="btn" value="Modificar Actividad"/></a><br>
+            <a href="EliminarActividad.html"><input type="submit" class="btn" value="Eliminar Actividad"/></a><br>
+            <a href=""><input type="submit" class="btn" value="Volver"/></a>
         </div>
-
     </div>
-    </div>
-
-    </div>
-
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
-
 </html>
