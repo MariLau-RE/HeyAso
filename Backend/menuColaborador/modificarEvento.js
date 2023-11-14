@@ -18,10 +18,19 @@ var encuesta = document.getElementById("encuesta");
 var selectCategoria = document.getElementById("selectCategoria");
 
 listaEvento.docs.forEach(doc => {
-    var option = document.createElement("option");
-    option.value = doc.data().idEvento;
-    option.text = doc.data().idEvento + " - " + doc.data().titulo;
-    selectEvento.appendChild(option);
+    var fechaHoy = new Date();
+    fechaHoy.setHours(0, 0, 0, 0);
+    var fecha = doc.data().fecha;
+    var partes = fecha.split("/");
+    var fechaEvento = new Date(partes[2], partes[1]-1, partes[0]);
+    console.log(fechaEvento);
+
+    if (fechaHoy < fechaEvento) {
+        var option = document.createElement("option");
+        option.value = doc.data().idEvento;
+        option.text = doc.data().idEvento + " - " + doc.data().titulo;
+        selectEvento.appendChild(option);
+    }
 });
 
 listaAsociacion.docs.forEach(doc => {

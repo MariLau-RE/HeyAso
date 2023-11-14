@@ -1,4 +1,3 @@
-
 const today = new Date();
 const currentMonth = today.getMonth();
 const currentYear = today.getFullYear();
@@ -30,10 +29,16 @@ function createDays(month, year) {
             classNames.push('active');
         }
 
-        html += `<div class="${classNames.join(' ')}">${i}</div>`;
+        html += `<div class="${classNames.join(' ')}"onclick="handleDayClick(${year}, ${month}, ${i})">${i}</div>`;
     }
 
     daysContainer.innerHTML = html;
+}
+
+function handleDayClick(year, month, day) {
+    const date = new Date(year, month, day);
+    const event = new CustomEvent('dayClick', { detail: date });
+    document.dispatchEvent(event);
 }
 
 createDays(currentMonth, currentYear);

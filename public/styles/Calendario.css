@@ -2,63 +2,136 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.calendar {
+.centered-layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layoutCalendar {
+    width: 1200px;
+    height: 620px;
+  
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    background-color: rgba(0, 0, 0, 0.093);
+    margin-top: 10px;
+}
+
+.layoutCalendar .container-left{
+    background-color: transparent;
+
+}
+
+.layoutCalendar .container-right{
+    border-radius: 4px;
+    padding-left: 10px;
+    margin-top: 33px;
+}
+
+.layoutCalendar .container-right h1{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(7, 7, 41);
+    padding: 20px 10px 20px 10px;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.layoutCalendar .container-right h2{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    margin-bottom: 35px;
+    margin-right: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.532);
+    background-color: white;
+    color: rgb(7, 7, 41);
+}
+
+.layoutCalendar .container-right label{
+    font-size: 20px;
+    margin-left: 20px;
+    text-align: center;
+    color: red;
+    padding: 10px 120px 10px 130px;
+}
+
+.layoutCalendar .container-right ul {
+    margin-left: 20px;
+    font-size: 16px; 
+    margin-right: 30px;
+    padding: 10px 0px 10px 0px;
+}
+
+.layoutCalendar .container-right ul li {
+    font-size: 20px;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.layoutCalendar .calendar {
     display: inline-block;
     padding: 50px;
     background-color: #f8f8f8;
-    border: 1px solid #ddd;
+    border: 1px solid #4a4444;
     border-radius: 4px;
 }
 
-.week-days, .days {
+.layoutCalendar .week-days, .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 4px;
 }
 
-.week-days div {
+.layoutCalendar .week-days div {
     text-align: center;
     font-weight: bold;
     color: #888;
 }
 
-.days div {
-    padding: 4px;
+.layoutCalendar .days div {
+    padding: 20px;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.days div:hover {
+.layoutCalendar .days div:hover {
     background-color: #f0f0f0;
 }
 
-.active {
+.layoutCalendar .active {
     background-color: #DD68E5;
     color: white;
 }
 
-.group {
-    width: 380px;
+.layoutCalendar .group {
+    width: 500px;
     height: 130px;
     margin: 30px auto;
     border: none;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 20px 20px 20px 20px;
-  }
+}
 
-  .month-header {
+.layoutCalendar .month-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
 }
 
-.month-header button {
+.layoutCalendar .month-header button {
     background-color: #DD68E5;
     color: white;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    margin-right: 30px ;
-    margin-left: 30px ;
+    margin-right: 20px ;
+    margin-left: 20px ;
     cursor: pointer;
 }

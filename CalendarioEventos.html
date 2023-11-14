@@ -15,29 +15,42 @@
             <a href="MenuPrincipalEstudiante.html"><input type="submit" class="btnBack" value="Volver"/></a>
         </div>
     </header>
-    <div class="group">
-        <div class="calendar">
-            <div class="month-header">
-                <button onclick="prevMonth()">Anterior</button>
-                <h2 id="month-year"></h2>
-                <button onclick="nextMonth()">Siguiente</button>
+    <div class="centered-layout">
+        <section class="layoutCalendar">
+            <div class="container-left">
+                <div class="group">
+                    <div class="calendar">
+                        <div class="month-header">
+                            <button onclick="prevMonth()">Anterior</button>
+                            <h2 id="month-year"></h2>
+                            <button onclick="nextMonth()">Siguiente</button>
+                        </div>
+                        <br /><br />
+                        <div class="week-days">
+                            <div>Dom</div>
+                            <div>Lun</div>
+                            <div>Mar</div>
+                            <div>Mié</div>
+                            <div>Jue</div>
+                            <div>Vie</div>
+                            <div>Sáb</div>
+                        </div>
+                        <div class="days">
+                            <script src="DiasCalendario.js"></script>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br /><br />
-            <div class="week-days">
-                <div>Dom</div>
-                <div>Lun</div>
-                <div>Mar</div>
-                <div>Mié</div>
-                <div>Jue</div>
-                <div>Vie</div>
-                <div>Sáb</div>
+            <div class="container-right">
+                <h1>EVENTOS DISPONIBLES</h1>
+                <h2 id="tituloDia">-</h2>
+                <label id="anuncio"></label>
+                <ul id="listaEvento"></ul>
             </div>
-            <div class="days">
-                <script src="DiasCalendario.js"></script>
-            </div>
-        </div>
+        </section>  
     </div>
-
-    <script src="DiasCalendario.js"></script>
+    
+    <script src="./Backend/menuEstudiante/DiasCalendario.js"></script>
+    <script type="module" src="./Backend/menuEstudiante/calendario.js"></script>
 </body>
 </html>
