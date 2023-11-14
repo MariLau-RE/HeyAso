@@ -65,7 +65,6 @@ async function crearActividad() {
     if(titulo == '' || recursos == '' || duracion == '' || idEvento == '0' || descripcion == '' || lugar == '' || encargado == '0'){
       alert("Debe completar todos los campos");
     }else{
-      console.log("ENTROO")
       try {
         const docRef = await addDoc(actividades, {
           idEvento: idEvento,
@@ -80,6 +79,7 @@ async function crearActividad() {
 
         console.log("Actividad creada con ID: ", docRef.id);
         alert("Actividad creada con éxito");
+        window.location.href="../AdministrarAgenda.html";
       } catch (e) {
         console.error("Error al agregar el documento: ", e);
       }
