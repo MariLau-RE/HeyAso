@@ -2,10 +2,10 @@ import { collection, getDocs, addDoc, updateDoc, doc } from "https://www.gstatic
 import { db } from "../configDatabase.js"
 
 const usuarios = collection(db, 'Usuarios');
+const listaUsuario = await getDocs(usuarios);
 const eventos = collection(db, 'Evento');
 const inscripciones = collection(db, 'Inscripcion');
 const listaEvento = await getDocs(eventos);
-const listaUsuario = await getDocs(usuarios);
 const listaInscripcion = await getDocs(inscripciones);
 var carnet = localStorage.getItem('carnet');
 var correoInscrip;
@@ -23,7 +23,15 @@ listaUsuario.forEach(docUs =>{
     }
 });
 
-listaEvento.docs.forEach(doc => {
+listaEvento.docs.filter(doc => {
+    var fechaHoy = new Date();
+    fechaHoy.setHours(0, 0, 0, 0);
+    var fecha = doc.data().fecha;
+    var partes = fecha.split("/");
+    var fechaEvento = new Date(partes[2], partes[1]-1, partes[0]);
+    return fechaHoy <= fechaEvento;
+}).forEach(doc => {
+    console.log("Evento", doc.data().idEvento);
     if(listaInscripcion.size == 0){
         // Creas un nuevo elemento option
         var option = document.createElement("option");
@@ -35,23 +43,24 @@ listaEvento.docs.forEach(doc => {
         // Agregas la opción al select
         select.appendChild(option);
     }else{
-        listaInscripcion.forEach(docIns =>{
-            if(docIns.data().contactoUsuario == correoInscrip){
-                eventoInscrip = docIns.data().idEvento;
-            }
-
-            if(eventoInscrip != doc.data().idEvento){
-                // Creas un nuevo elemento option
-                var option = document.createElement("option");
-        
-                // Le asignas un valor y un texto
-                option.value = doc.data().idEvento;
-                option.text = doc.data().titulo;
-                        
-                // Agregas la opción al select
-                select.appendChild(option);
+        listaInscripcion.docs.forEach(docInscrip =>{
+            if(docInscrip.data().idEvento == doc.data().idEvento){
+                if(docInscrip.data().contactoUsuario == correoInscrip){
+                    eventoInscrip = docInscrip.data().idEvento;
+                }
             }
         });
+        if(eventoInscrip != doc.data().idEvento){
+            // Creas un nuevo elemento option
+            var option = document.createElement("option");
+        
+            // Le asignas un valor y un texto
+            option.value = doc.data().idEvento;
+            option.text = doc.data().titulo;
+                                
+            // Agregas la opción al select
+            select.appendChild(option);
+        }
     }  
 });
 

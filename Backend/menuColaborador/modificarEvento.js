@@ -75,7 +75,6 @@ async function getEvento(idEvento) {
 function mostrarFecha(fecha){
     var partes = fecha.split("/");
     var fechaFormateada = partes[2] + "-" + partes[1] + "-" + partes[0];
-    console.log(fechaFormateada);
     return fechaFormateada;
 }
 
@@ -96,7 +95,7 @@ async function modificarEvento() {
                 descripcion: descripcion.value,
                 fecha: modificarFecha(fecha.value),
                 lugar: lugar.value,
-                duracion: Number(duracion.value),
+                duracion: duracion.value,
                 capacidad: Number(capacidad.value),
                 requisitos: requisitos.value,
                 encuesta: encuesta.checked,

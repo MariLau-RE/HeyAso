@@ -28,6 +28,7 @@ async function propuesta() {
         });
         console.log("Propuesta creada con ID: ", docRef.id);
         alert("Propuesta enviada con éxito");
+        window.location.href = "PantallaForo.html";
       } catch (e) {
         console.error("Error al agregar el documento: ", e);
       }

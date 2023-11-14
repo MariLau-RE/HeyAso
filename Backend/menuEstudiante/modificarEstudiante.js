@@ -4,6 +4,9 @@ import { db } from "../configDatabase.js"
 const usuarios = collection(db, 'Usuarios');
 const listaUsuario = await getDocs(usuarios);
 var carnet = localStorage.getItem('carnet');
+var idAsociacion;
+var puesto;
+var idTipo
 
 listaUsuario.forEach(docUs =>{
   if(docUs.data().carnet == carnet){
@@ -12,6 +15,9 @@ listaUsuario.forEach(docUs =>{
     document.getElementById("correo").value = docUs.data().correo;
     document.getElementById("contrasenna").value = docUs.data().contraseña;
     document.getElementById("contacto").value = docUs.data().contacto;
+    idAsociacion = docUs.data().idAsociacion;
+    puesto = docUs.data().puesto;
+    idTipo = docUs.data().idTipo;
 
     if(docUs.data().descripcion != ""){
       document.getElementById("descripcion").value = docUs.data().descripcion;
@@ -40,9 +46,9 @@ async function modificarEstudiante() {
         contraseña: contrasenna,
         contacto: contacto,
         descripcion: descripcion,
-        idTipo: "Estudiante",
-        idAsociacion: "",
-        puesto: ""
+        idTipo: idTipo,
+        idAsociacion: idAsociacion,
+        puesto: puesto
       });
       console.log("Usuario modificado con ID: ", carnet);
       alert("Cuenta modificada con éxito");

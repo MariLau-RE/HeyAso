@@ -8,28 +8,62 @@ const inscripciones = collection(db, 'Inscripcion');
 const listaUsuario = await getDocs(usuarios);
 const listaEvento = await getDocs(eventos);
 const listaInscripcion = await getDocs(inscripciones);
+const listaEvaluaciones = await getDocs(evaluaciones);
+
+var carnet = localStorage.getItem('carnet');
+var correoInscrip;
 
 var select = document.getElementById("selectEvento");
 var selectCalif = document.getElementById("selectCalificacion");
 
-listaEvento.docs.forEach(doc => {
-    listaInscripcion.forEach(docIns =>{
-        if(doc.data().idEvento == docIns.data().idEvento){
-            listaUsuario.forEach(docUs =>{
-                if(docIns.data().contactoUsuario == docUs.data().correo){
-                      // Creas un nuevo elemento option
-                      var option = document.createElement("option");
+listaUsuario.forEach(docUs =>{
+  if(docUs.data().carnet == carnet){
+      correoInscrip = docUs.data().correo;
+  }
+});
 
-                      // Le asignas un valor y un texto
-                      option.value = doc.data().idEvento;
-                      option.text = doc.data().titulo;
+// Obtén los eventos en los que el usuario está inscrito
+var eventosInscritos = listaInscripcion.docs.filter(doc => doc.data().contactoUsuario == correoInscrip).map(doc => doc.data().idEvento);
 
-                      // Agregas la opción al select
-                      select.appendChild(option);
-                }
-            });
-        }
-    });
+// Obtén las evaluaciones que el usuario ha realizado
+var eventosEvaluados = listaEvaluaciones.docs.filter(doc => doc.data().carnet == carnet).map(doc => doc.data().idEvento);
+
+// Encuentra los eventos en los que el usuario está inscrito pero que aún no ha evaluado
+var eventosPendientes = eventosInscritos.filter(idEvento => !eventosEvaluados.includes(idEvento));
+console.log(eventosPendientes);
+
+
+listaEvento.docs.filter(doc => {
+  var fechaHoy = new Date();
+  fechaHoy.setHours(0, 0, 0, 0);
+  var fecha = doc.data().fecha;
+  var partes = fecha.split("/");
+  var fechaEvento = new Date(partes[2], partes[1]-1, partes[0]);
+  return fechaHoy >= fechaEvento;
+}).forEach(doc => {
+  if(listaInscripcion.size == 0){
+      // Creas un nuevo elemento option
+      var option = document.createElement("option");
+  
+      // Le asignas un valor y un texto
+      option.value = doc.data().idEvento;
+      option.text = doc.data().titulo;
+                          
+      // Agregas la opción al select
+      select.appendChild(option);
+  }else{
+      if(eventosPendientes.includes(doc.data().idEvento)){
+          // Creas un nuevo elemento option
+          var option = document.createElement("option");
+      
+          // Le asignas un valor y un texto
+          option.value = doc.data().idEvento;
+          option.text = doc.data().titulo;
+                              
+          // Agregas la opción al select
+          select.appendChild(option);
+      }
+  }  
 });
 
 async function evaluarEvento() {
@@ -53,6 +87,7 @@ async function evaluarEvento() {
           });
           console.log("Evaluacion creada con ID: ", docRef.id);
           alert("Su evaluación ha sido enviada con éxito");
+          window.location.href = "PantallaForo.html";
         } catch (e) {
           console.error("Error al agregar el documento: ", e);
         }
