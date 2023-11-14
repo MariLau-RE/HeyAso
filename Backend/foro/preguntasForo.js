@@ -40,6 +40,7 @@ submitButton.addEventListener("click", async function() {
     })
 
     const comment = nombreUsuario+": "+commentInput.value;
+    const mensaje = commentInput.value;
     const commentElement = document.createElement("div");
     commentElement.innerHTML = comment;
     commentElement.style.textAlign = "right";
@@ -54,7 +55,7 @@ submitButton.addEventListener("click", async function() {
     try {
         const docRef = await addDoc(comentarios, {
           usuario: nombreUsuario,
-          mensaje: comment,
+          mensaje: mensaje,
           timestamp: miTimestamp
         });
         console.log("Comentario creado con ID: ", docRef.id);

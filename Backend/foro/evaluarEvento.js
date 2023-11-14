@@ -41,29 +41,19 @@ listaEvento.docs.filter(doc => {
   var fechaEvento = new Date(partes[2], partes[1]-1, partes[0]);
   return fechaHoy >= fechaEvento;
 }).forEach(doc => {
-  if(listaInscripcion.size == 0){
+  if(eventosPendientes.includes(doc.data().idEvento)){
+    if(doc.data().encuesta == true){
       // Creas un nuevo elemento option
       var option = document.createElement("option");
   
       // Le asignas un valor y un texto
       option.value = doc.data().idEvento;
       option.text = doc.data().titulo;
-                          
+                                    
       // Agregas la opción al select
       select.appendChild(option);
-  }else{
-      if(eventosPendientes.includes(doc.data().idEvento)){
-          // Creas un nuevo elemento option
-          var option = document.createElement("option");
-      
-          // Le asignas un valor y un texto
-          option.value = doc.data().idEvento;
-          option.text = doc.data().titulo;
-                              
-          // Agregas la opción al select
-          select.appendChild(option);
-      }
-  }  
+    }
+  }
 });
 
 async function evaluarEvento() {
@@ -87,7 +77,7 @@ async function evaluarEvento() {
           });
           console.log("Evaluacion creada con ID: ", docRef.id);
           alert("Su evaluación ha sido enviada con éxito");
-          window.location.href = "PantallaForo.html";
+          window.location.href = "../PantallaForo.html";
         } catch (e) {
           console.error("Error al agregar el documento: ", e);
         }

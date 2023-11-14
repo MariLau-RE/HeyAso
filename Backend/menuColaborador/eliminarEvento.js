@@ -2,7 +2,11 @@ import { collection, deleteDoc, getDocs} from "https://www.gstatic.com/firebasej
 import { db } from "../configDatabase.js"
 
 const eventos = collection(db, 'Evento');
+const actividades = collection(db, 'Actividades');
+const inscripciones = collection(db, 'Inscripcion');
 const listaEvento = await getDocs(eventos);
+const listaActividad = await getDocs(actividades);
+const listaInscripcion = await getDocs(inscripciones);
 var selectEvento = document.getElementById("selectEvento");
 
 
@@ -32,6 +36,29 @@ async function eliminarEvento() {
     //falta agregar la eliminacion de las actividades
 
     if (valorSeleccionado != "0") {
+        
+        listaInscripcion.docs.forEach(async docIns => {
+            if(docIns.data().idEvento == valorSeleccionado){
+                try {
+                    await deleteDoc(docIns.ref);
+                    console.log("Inscripción del evento eliminada");
+                } catch (e) {
+                    console.error("Error al eliminar el documento: ", e);
+                }
+            }
+        });
+
+        listaActividad.docs.forEach(async docAc => {
+            if(docAc.data().idEvento == valorSeleccionado){
+                try {
+                    await deleteDoc(docAc.ref);
+                    console.log("Actividad del evento eliminada");
+                } catch (e) {
+                    console.error("Error al eliminar el documento: ", e);
+                }
+            }
+        });
+
         listaEvento.docs.forEach(async doc => {
             if(doc.data().idEvento == valorSeleccionado){
                 try {
