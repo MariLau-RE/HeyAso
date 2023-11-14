@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Analisis de Datos</title>
+    <link rel="stylesheet" href="public/styles/Informes.css"/>
+    <link rel="stylesheet" href="public/styles/mainStyle.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="./Backend/opcionesEvento/analisisDatosChart.js"></script>
+    <script type="module" src="./Backend/opcionesEvento/analisisDatos.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="public/images/logo.png" class="logo">
+        <p><strong><br />HeyAso</strong></p>
+    </header>
+
+    <div>
+    <title>Analisis de Datos</title>
+    <div class="analisis-datos">
+        <h1>Análisis de Datos</h1>
+        <div class="charts">
+            <div class="chart1">
+                <h3>Top 3: Cantidad de comentarios</h3>
+                <canvas id="evaluaciones"></canvas>
+            </div>
+            <div class="chart2">
+                <h3>Top 3: Calificaciones promedio</h3>
+                <canvas id="comentarios"></canvas>
+            </div>
+        </div>
+        <input class="btnBack" style="margin-top: 40px;" type="button" value="Volver" onclick="window.location.href='opcionesEvento.html'" />
+    </div>
+</body>
+
+</html>

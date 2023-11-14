@@ -90,3 +90,46 @@
     text-align: justify;
 }
 
+.analisis-datos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.analisis-datos h1{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.analisis-datos .charts{
+    display: flex;
+    justify-content: center;
+}
+
+.analisis-datos .charts .chart1{
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 400px;
+    height: 400px;
+}
+
+.analisis-datos .charts .chart1 h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.analisis-datos .charts .chart2{
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 400px;
+    height: 400px;
+}
+
+.analisis-datos .charts .chart2 h3{
+    text-align: center;
+    margin-bottom: 20px;
+}

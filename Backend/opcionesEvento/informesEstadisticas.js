@@ -86,9 +86,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     } else {
         const capacidades = eventosPasados.map(doc => doc.data().capacidad);
         const duracion = eventosPasados.map(doc => doc.data().duracion);
-        console.log(duracion.reduce((a, b) => a + b, 0));
         const categoria = eventosPasados.map(doc => doc.data().categoria);
-
         const cantInscripcionesPorEventoPromises = eventosPasados.map(doc => getCantInscripciones(doc.data().idEvento));
         const cantInscripcionesPorEvento = await Promise.all(cantInscripcionesPorEventoPromises);
 
@@ -98,9 +96,9 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         const promedioDuracion = duracion.reduce((a, b) => a + Number(b), 0) / duracion.length; 
         const topCategoria = categoria.sort((a, b) => categoria.filter(v => v === a).length - categoria.filter(v => v === b).length).pop();
 
-        document.getElementById("promedioInscripciones").textContent = promedioInscripciones;
-        document.getElementById("promedioParticipantes").textContent = promedioParticipantes;
-        document.getElementById("promedioDuracion").textContent = promedioDuracion;
+        document.getElementById("promedioInscripciones").textContent = promedioInscripciones.toFixed(2);
+        document.getElementById("promedioParticipantes").textContent = promedioParticipantes.toFixed(2);
+        document.getElementById("promedioDuracion").textContent = promedioDuracion.toFixed(2);
         document.getElementById("topCategoria").textContent = topCategoria;
     }
 });
