@@ -3,8 +3,10 @@ import { db } from "../configDatabase.js"
 
 const eventos = collection(db, 'Evento');
 const asociaciones = collection(db, 'Asociacion');
+const usuarios = collection(db, 'Usuarios');
 const listaEvento = await getDocs(eventos);
 const listaAsociacion = await getDocs(asociaciones);
+const listaUsuario = await getDocs(usuarios);
 var selectEvento = document.getElementById("selectEvento");
 var selectAsociacion = document.getElementById("selectAso");
 var titulo = document.getElementById("titulo");
@@ -71,6 +73,43 @@ selectEvento.addEventListener('change', async (event) => {
     }
 });
 
+function generarQR(texto, correoDestinatario){
+    // Crea un elemento canvas temporal
+    var canvas = document.createElement('canvas');
+
+    var qrcode = new QRCode(canvas, {
+        text: texto,
+        width: 200,
+        height: 200,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+
+    // Espera a que se genere el código QR
+    setTimeout(function() {
+        // Obtén la imagen del código QR como una cadena de datos en formato base64
+        var imagenBase64 = canvas.toDataURL("image/png");
+
+        // Ahora puedes usar la variable imagenBase64 como desees
+        console.log(imagenBase64);
+        sendEmail(imagenBase64, correoDestinatario);
+    }, 1000);
+}
+
+function sendEmail(imagen, correoDestinatario){ 
+    emailjs.send('service_wbig974', 'template_2c9otga', {
+        to_email: correoDestinatario,
+        qrCode: imagen,
+    }, 'O-q83jW2lgienaoA8')
+    .then((response) => {
+       console.log('SUCCESS!', response.status, response.text);
+    }, (err) => {
+       console.log('FAILED...', err);
+    });
+}
+
+//------------------------- FUNCIONES -------------------------------------------------------------
 async function getEvento(idEvento) {
     const q = query(collection(db, "Evento"), where("idEvento", "==", idEvento));
     const querySnapshot = await getDocs(q);
@@ -93,6 +132,8 @@ function modificarFecha(fecha){
 }
 
 async function modificarEvento() {
+    var carnet = localStorage.getItem('carnet');
+
     if(titulo == '' || lugar == '' || duracion == '' || fecha == '' || descripcion == '' || capacidad == '' || selectCategoria.text == 'Seleccione una categoría' || selectAsociacion.text == 'Seleccione una asociación'){
         alert("Debe completar todos los campos(no opcionales)");
     } 
@@ -111,11 +152,17 @@ async function modificarEvento() {
                 idAsociacion: selectAsociacion.value,
                 categoria: selectCategoria.value
             });
-            alert("Evento modificado con éxito");
-            window.location.href = "AdministrarEvento.html";
+            alert("Evento modificado con éxito"); 
         } catch (e) {
             console.error("Error al modificar el documento: ", e);
         }
+
+        var texto = selectEvento.value+carnet;
+        listaUsuario.forEach(docUs =>{
+            generarQR(texto, docUs.data().correo);
+        });
+
+        window.location.href = "AdministrarEvento.html";
     }
 }
 
