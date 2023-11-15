@@ -20,10 +20,10 @@ function loginUser() {
         console.log(localStorage.getItem('canert'));
         if(doc.data().idTipo == "Estudiante"){
           encontroUsuario = true;
-          window.location.href = "../MenuPrincipalEstudiante.html";
+          window.location.href = "MenuPrincipalEstudiante.html";
         }else{
           encontroUsuario = true;
-          window.location.href = "../MenuPrincipalColaborador.html";
+          window.location.href = "MenuPrincipalColaborador.html";
         }
       }
     });
