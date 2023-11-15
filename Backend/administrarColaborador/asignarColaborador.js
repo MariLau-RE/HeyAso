@@ -56,7 +56,7 @@ async function asignarColaborador() {
                 puesto: puestoText
             });
             alert("Colaborador asignado con éxito");
-            window.location.href = "PaginaPrincipal.html";
+            window.location.href = "index.html";
         } catch (e) {
             console.error("Error al modificar el documento: ", e);
         }

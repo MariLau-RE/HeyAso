@@ -10,7 +10,7 @@ async function eliminarEstudiante() {
         console.log("Usuario eliminado con ID: ", carnet);
         localStorage.removeItem('carnet');
         alert("Cuenta eliminada con éxito.");
-        window.location.href="PaginaPrincipal.html";
+        window.location.href="index.html";
     } catch (e) {
         console.error("Error al eliminar el documento: ", e);
     }

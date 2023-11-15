@@ -32,7 +32,7 @@ async function registroEstudiante() {
           puesto: ""
         });
         alert("Cuenta creada con éxito");
-        window.location.href="PaginaPrincipal.html"
+        window.location.href="index.html"
       } catch (e) {
         console.error("Error al agregar el documento: ", e);
       }
