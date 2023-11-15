@@ -129,7 +129,7 @@ async function modificarActividad(){
              });
              console.log("Actividad actualizada con ID: ", idActividad);
              alert("Actividad actualizada con éxito");
-             window.location.href="../AdministrarAgenda.html";
+             window.location.href="AdministrarAgenda.html";
         } catch (e) {
             console.error("Error al actualizar el documento: ", e);
         }

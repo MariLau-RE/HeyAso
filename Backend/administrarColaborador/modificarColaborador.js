@@ -74,7 +74,7 @@ async function modificarColab(){
          });
          console.log("Colaborador actualizado con ID: ", colaborador);
          alert("Colaborador actualizado con éxito");
-         window.location.href="../AdministrarColaborador.html";
+         window.location.href="AdministrarColaborador.html";
       } catch (e) {
         console.error("Error al actualizar el documento: ", e);
       }

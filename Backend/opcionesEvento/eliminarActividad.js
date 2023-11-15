@@ -63,7 +63,7 @@ async function eliminarActividad() {
         try {
             await deleteDoc(doc(actividades, idActividad));
             alert("Actividad eliminada con éxito.");
-            window.location.href="../AdministrarAgenda.html";
+            window.location.href="AdministrarAgenda.html";
         } catch (e) {
             console.error("Error al eliminar el documento: ", e);
         }

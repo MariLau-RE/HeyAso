@@ -138,7 +138,7 @@ function inscribirse() {
                             localStorage.setItem('qrEvento', valorSeleccionado);
                             localStorage.setItem('qrInscripcion', valorSeleccionado+contacto+docRef.id);
                             alert("Su inscripción se realizó con éxito");
-                            window.location.href = "../PantallaQR.html";
+                            window.location.href = "PantallaQR.html";
                         } catch (e) {
                             console.error("Error al agregar el documento: ", e);
                         }

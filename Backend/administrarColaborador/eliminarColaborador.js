@@ -68,7 +68,7 @@ async function eliminarColaborador() {
        });
        console.log("Colaborador eliminado/actualizado");
        alert("Colaborador eliminado con éxito");
-       window.location.href="../PaginaPrincipal.html";
+       window.location.href="PaginaPrincipal.html";
     } catch (e) {
       console.error("Error al actualizar el documento: ", e);
     }

@@ -56,7 +56,7 @@ async function eliminarAsociacion() {
         console.log("Asociacion eliminada con ID: ", id);
         alert("Asociación eliminada con éxito.");
         localStorage.removeItem('carnet');  
-        window.location.href="../PaginaPrincipal.html";
+        window.location.href="PaginaPrincipal.html";
     } catch (e) {
         console.error("Error al eliminar el documento: ", e);
     }

@@ -24,7 +24,7 @@ async function registroAsociacion() {
       });
       console.log("Asocia registrada con ID: ", identificador);
       alert("Asociación creada con éxito");
-      window.location.href="../PaginaPrincipal.html"
+      window.location.href="PaginaPrincipal.html"
     } catch (e) {
       console.error("Error al agregar el documento: ", e);
     }

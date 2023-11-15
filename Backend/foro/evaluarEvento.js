@@ -77,7 +77,7 @@ async function evaluarEvento() {
           });
           console.log("Evaluacion creada con ID: ", docRef.id);
           alert("Su evaluación ha sido enviada con éxito");
-          window.location.href = "../PantallaForo.html";
+          window.location.href = "PantallaForo.html";
         } catch (e) {
           console.error("Error al agregar el documento: ", e);
         }

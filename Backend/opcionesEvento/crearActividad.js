@@ -79,7 +79,7 @@ async function crearActividad() {
 
         console.log("Actividad creada con ID: ", docRef.id);
         alert("Actividad creada con éxito");
-        window.location.href="../AdministrarAgenda.html";
+        window.location.href="AdministrarAgenda.html";
       } catch (e) {
         console.error("Error al agregar el documento: ", e);
       }

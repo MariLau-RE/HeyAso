@@ -60,7 +60,7 @@ async function modificarAsociacion() {
        });
        console.log("Asocia registrada con ID: ", id);
        alert("Asociación modificada con éxito");
-       window.location.href="../GestionAsociacion.html";
+       window.location.href="GestionAsociacion.html";
     } catch (e) {
       console.error("Error al actualizar el documento: ", e);
     }

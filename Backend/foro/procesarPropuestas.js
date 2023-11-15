@@ -20,7 +20,7 @@ btnAceptar.addEventListener("click", async function() {
             const docRef = doc(propuestas, idPropuesta); // Obtiene la referencia al documento
             await updateDoc(docRef,{ estado: "Aceptada" }); // Actualiza solo el campo encuesta
             alert("Propuesta aceptada con éxito.");
-            window.location.href="../PantallaForo.html";   
+            window.location.href="PantallaForo.html";   
         } catch (e) {
             console.error("Error al actualizar el documento: ", e);
         }
@@ -38,7 +38,7 @@ btnRechazar.addEventListener("click", async function() {
             const docRef = doc(propuestas, idPropuesta); // Obtiene la referencia al documento
             await updateDoc(docRef,{ estado: "Rechazada" }); // Actualiza solo el campo encuesta
             alert("Propuesta rechazada con éxito.");
-            window.location.href="../PantallaForo.html";    
+            window.location.href="PantallaForo.html";    
         } catch (e) {
             console.error("Error al actualizar el documento: ", e);
         }

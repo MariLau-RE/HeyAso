@@ -22,9 +22,9 @@ function menu(){
     listaUsuario.forEach(docUs =>{
         if(docUs.data().carnet == carnet){
             if(docUs.data().idTipo == "Admin"){
-                window.location.href='../MenuPrincipalColaborador.html';
+                window.location.href='MenuPrincipalColaborador.html';
             }else{
-                window.location.href='../MenuPrincipalEstudiante.html';
+                window.location.href='MenuPrincipalEstudiante.html';
             }
         }
     });
