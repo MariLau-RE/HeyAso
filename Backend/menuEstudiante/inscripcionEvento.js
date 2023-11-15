@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc, updateDoc, doc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
+import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 import { db } from "../configDatabase.js"
 
 const usuarios = collection(db, 'Usuarios');
@@ -15,6 +15,8 @@ console.log("Inscrip", listaInscripcion.size);
 
 var select = document.getElementById("selectEvento");
 var label = document.getElementById("cupos");
+
+var lista = document.getElementById("eventosInscritos");
 
 
 listaUsuario.forEach(docUs =>{
@@ -61,8 +63,34 @@ listaEvento.docs.filter(doc => {
             // Agregas la opción al select
             select.appendChild(option);
         }
-    }  
+    } 
+    if (eventoInscrip == doc.data().idEvento) {
+        var li = document.createElement("li");
+        li.textContent = doc.data().titulo;
+        li.setAttribute('idEvento', doc.data().idEvento);
+        console.log("siiiiiiiii", doc.data().idEvento);
+        li.onclick = function() {
+            if (confirm("¿Estás seguro de que quieres cancelar tu inscripción a este evento?")) {
+                listaInscripcion.docs.forEach(async docIns => {
+                    if(docIns.data().idEvento == this.getAttribute('idEvento')){
+                        try {
+                            await deleteDoc(docIns.ref);
+                            alert("Inscripción cancelada con éxito.");
+                            console.log("Inscripción del evento eliminada");
+                            location.reload();
+                        } catch (e) {
+                            console.error("Error al eliminar el documento: ", e);
+                        }
+                    }
+                });
+            }
+        };
+        lista.appendChild(li);
+    } 
 });
+
+
+
 
 
 function validarUsuario(contacto){
