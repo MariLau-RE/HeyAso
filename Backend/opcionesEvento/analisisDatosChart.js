@@ -9,9 +9,9 @@ export function updateChart(listaEventosComentarios, listaEventosEvaluaciones) {
     
     const topEvaluaciones = listaEventosEvaluaciones.map(evento => {
         const sum = evento.evaluaciones.reduce((a, b) => Number(a) + Number(b), 0);
-        const avg = (sum / evento.evaluaciones.length);
+        const avg = (evento.evaluaciones.length > 0) ? (sum / evento.evaluaciones.length) : 0;
         return { ...evento, avg };
-    }).sort((a, b) => b.avg - a.avg).slice(0, 3);
+    }).sort((a, b) => (isNaN(b.avg) ? 0 : b.avg) - (isNaN(a.avg) ? 0 : a.avg)).slice(0, 3);
    
     const labelsC = topComentarios.map(evento => { return evento.nombre; });
     const dataC = topComentarios.map(evento => { return evento.comentarios; });
